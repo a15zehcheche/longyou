@@ -1,9 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
+import Map from './component/map'
 import './App.css';
+import Player from './component/player'
+import date from './date'
 
 function App() {
+  const players = date.players.map((playerDate) => <Player date={playerDate}/> );
+
   return (
+    <div>
+      <div class="playerContainer">
+        {players}
+      </div>
+      <Map />
+    </div>
+
+    /*
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -20,6 +33,7 @@ function App() {
         </a>
       </header>
     </div>
+    */
   );
 }
 
