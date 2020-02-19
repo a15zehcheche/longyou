@@ -3,8 +3,11 @@ import '../App.css';
 
 class Player extends Component {
     render() {
+        const mystyle = {
+            backgroundColor: this.props.date.color,
+        }
         return (
-            <div className="player">
+            <div className="player" style={mystyle}>
                 <h3>{this.props.date.character}</h3>
                 <ul>
                     <li>name : {this.props.date.name}</li>
