@@ -6,11 +6,11 @@ import Player from './component/player'
 import date from './date'
 
 function App() {
-  const players = date.players.map((playerDate) => <Player date={playerDate}/> );
+  const players = date.players.map((playerDate) => <Player key ={playerDate.id} date={playerDate}/> );
 
   return (
     <div>
-      <div class="playerContainer">
+      <div className="playerContainer">
         {players}
       </div>
       <Map />
