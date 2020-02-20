@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import '../App.css';
 import $ from "jquery";
-$('document').ready(function () {
+import map from '../res/map.png';
+import Cell from './cell'
+import Card from './card'
+import date from '../date'
 
+
+
+$('document').ready(function () {
   const slider = $('.mapcontainer');
   let isDown = false;
   let startX;
@@ -32,9 +38,9 @@ $('document').ready(function () {
     const walkX = (x - startX) * fast; //scroll-fast
     slider.scrollLeft(scrollLeft - walkX)  //slider.scrollLeft =  scrollLeft - walk;
     //vectial
-    const y =  e.pageY - slider.offset().top;
+    const y = e.pageY - slider.offset().top;
     const walkY = (y - startY) * fast; //scroll-fast
-    slider.scrollTop(scrollTop - walkY) ;
+    slider.scrollTop(scrollTop - walkY);
 
 
   }).mouseleave(function () {
@@ -46,16 +52,27 @@ $('document').ready(function () {
 class Map extends Component {
 
   render() {
+    const Cells = date.map.cells.map((cellDate, index) => <Cell key={"cell" + index} cellDate={cellDate} />);
+    const Cards = date.map.cards.map((cardDate, index) => <Card key={"card" + index} cardDate={cardDate} />);
     return (
-      <div className="mapcontainer">
-        <div className="map">
-          <img width="100%" src={process.env.PUBLIC_URL + '/map.png'}  alt="map" />
-          <div id="bottomLeft">bottomLeft</div>
-          <div id="bottomRight">bottomRight</div>
-          <div id="topLeft">topLeft</div>
-          <div id="topRight">topRight</div>
+      <div style={{ position: "relative" }}>
+        <div className="mapcontainer" >
+          <div className="map">
+            <img width="100%" src={map} alt="map" />
+            <div id="bottomLeft">bottomLeft</div>
+            <div id="bottomRight">bottomRight</div>
+            <div id="topLeft">topLeft</div>
+            <div id="topRight">topRight</div>
+          </div>
+          <div>
+            {Cells}
+          </div>
+          <div>
+            {Cards}
+          </div>
         </div>
       </div>
+
     );
   }
 }

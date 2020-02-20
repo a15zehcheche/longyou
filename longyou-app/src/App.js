@@ -6,7 +6,7 @@ import Player from './component/player'
 import date from './date'
 
 function App() {
-  const players = date.players.map((playerDate) => <Player key ={playerDate.id} date={playerDate}/> );
+  const players = date.players.map((playerDate) => <Player key={playerDate.id} date={playerDate} />);
 
   return (
     <div>
@@ -17,6 +17,8 @@ function App() {
     </div>
 
     /*
+
+
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
