@@ -1,19 +1,32 @@
-import React from 'react';
-//import logo from './logo.svg';
-import Map from './component/map'
-import './App.css';
-import Player from './component/player'
-import date from './date'
+import React, {Component} from 'react';
+import StartScreen from './screen/startScreen'
+import GameScreen from './screen/gameScreen'
+import WinResultScreen from './screen/winResultScreen'
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      start: false,
+      scree: null
+    }
 
+  }
+
+  render() {
+    return (
+      <div>
+      <StartScreen/>
+      </div>
+    );
+  };
+}
+
+/*
 function App() {
-  const players = date.players.map((playerDate) => <Player key={playerDate.id} date={playerDate} />);
-
+  
   return (
     <div>
-      <div className="playerContainer">
-        {players}
-      </div>
-      <Map />
+       <StartScreen  />
     </div>
 
     /*
@@ -35,8 +48,9 @@ function App() {
         </a>
       </header>
     </div>
-    */
+ 
   );
 }
+   */
 
 export default App;

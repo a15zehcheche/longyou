@@ -167,3 +167,52 @@
     margin: 0;
   }
 }
+
+/*--------------- init CSS ---------------*/
+
+.initGame{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.initGame button{
+  font-size: 30px;
+  width: 200px;
+  height: 50px;
+  margin: 10px;
+}
+.initGame input{
+  border-radius: 5px;
+  height: 20px;
+}
+
+.playerContainerInit{
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  background-color: peru;
+  border-radius: 50px;
+}
+
+.initPlayerBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  position: relative;
+}
+
+
+.arraow{
+  display: none;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.character:hover .arraow{
+  display: block;
+}

@@ -1,40 +1,68 @@
 
 const Dates = {
+    "characters":[
+        {
+            "id":0,
+            "name":"随机包",
+            "img":"/images/0.jpg",
+        },
+        {
+            "id":1,
+            "name":"豆沙包",
+            "img":"/images/1.jpg",
+        },
+        {
+            "id":2,
+            "name":"柠檬包",
+            "img":"/images/2.jpg",
+        },
+        {
+            "id":3,
+            "name":"蔬菜包",
+            "img":"/images/3.jpg",
+        },   
+        {
+            "id":4,
+            "name":"海盐包",
+            "img":"/images/4.jpg",
+        },   
+        {
+            "id":5,
+            "name":"眼影包",
+            "img":"/images/5.jpg",
+        },   
+        {
+            "id":6,
+            "name":"可乐包",
+            "img":"/images/6.jpg",
+        },   
+        {
+            "id":7,
+            "name":"非洲包",
+            "img":"/images/7.jpg",
+        },
+       
+    ],
+    "player": {
+        "character": null,
+        "name": null,
+        "money": null,
+        "id": null,
+    },
     "players": [
         {
-            "character": "Player 1",
+            "character": null,
             "name": "Joan",
             "money": 1000,
             "id": "bottomLeft",
             "color": "#FFC"
         },
         {
-            "character": "Player 2",
+            "character": null,
             "name": "David",
             "money": 2000,
             "id": "bottomRight",
             "color": "yellow"
-        },
-        {
-            "character": "Player 3",
-            "name": "Alejandro",
-            "money": 3000,
-            "id": "topRight",
-            "color": "green"
-        },
-        {
-            "character": "Player 4",
-            "name": "Victor",
-            "money": 4000,
-            "id": "topLeft",
-            "color": "blue"
-        },
-        {
-            "character": "Player 5",
-            "name": "Victor",
-            "money": 4000,
-            "id": "topLeft2",
-            "color": "red"
         },
     ],
     "map": {
@@ -167,7 +195,7 @@ const Dates = {
                 "top": 2017,
                 "left": 45,
             },
-             //bottom
+            //bottom
             {
                 "height": 304,
                 "width": 182,
@@ -221,7 +249,7 @@ const Dates = {
                 "width": 182,
                 "top": 2017,
                 "left": 1832,
-            }, 
+            },
             {
                 "height": 304,
                 "width": 304,
@@ -282,9 +310,9 @@ const Dates = {
                 "width": 304,
                 "top": 1831,
                 "left": 45,
-            },    
+            },
         ],
-        "cards":[
+        "cards": [
             {
                 "height": 312,
                 "width": 455,

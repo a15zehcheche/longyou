@@ -13,7 +13,7 @@ class Player extends Component {
                     <li>name : {this.props.date.name}</li>
                     <li>money: {this.props.date.money}</li>
                     <li>
-                        <a href={"#" + this.props.date.id}>bottomLeft</a>
+                        <a href={"#" + this.props.date.id}>{this.props.date.id}</a>
                     </li>
                 </ul>
             </div>
