@@ -16,9 +16,9 @@ class StartScreen extends Component {
     }
 
     handleStartClick = () => {
-        console.log(this.state.players)
+        //console.log(this.state.players)
         this.setState({ players: this.state.players })
-       // this.setState({ start: true });
+        this.setState({ start: true });
     }
     addPlayer = () => {
         if (this.state.players.length < 7) {
