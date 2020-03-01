@@ -9,37 +9,37 @@ const Dates = {
         {
             "id":1,
             "name":"豆沙包",
-            "img":"/images/1.jpg",
+            "img":"/images/1.png",
         },
         {
             "id":2,
             "name":"柠檬包",
-            "img":"/images/2.jpg",
+            "img":"/images/2.png",
         },
         {
             "id":3,
             "name":"蔬菜包",
-            "img":"/images/3.jpg",
+            "img":"/images/3.png",
         },   
         {
             "id":4,
             "name":"海盐包",
-            "img":"/images/4.jpg",
+            "img":"/images/4.png",
         },   
         {
             "id":5,
             "name":"眼影包",
-            "img":"/images/5.jpg",
+            "img":"/images/5.png",
         },   
         {
             "id":6,
             "name":"可乐包",
-            "img":"/images/6.jpg",
+            "img":"/images/6.png",
         },   
         {
             "id":7,
             "name":"非洲包",
-            "img":"/images/7.jpg",
+            "img":"/images/7.png",
         },
        
     ],

@@ -8,11 +8,11 @@ import GameScreen from './gameScreen'
 
 
 class StartScreen extends Component {
-    
+
     state = {
         start: false,
         players: [],
-        characters:[],
+        characters: [],
     }
 
     handleStartClick = () => {
@@ -50,13 +50,13 @@ class StartScreen extends Component {
         this.state.players[index].characterId = characterId;
         //this.setState({ players: this.state.players })
     }
-    updateCharacterStatus=(index)=>{
+    selectCharacterStatus = (index) => {
         this.state.characters[index].isSelect = !this.state.characters[index].isSelect
     }
     componentDidMount() {
         this.addPlayer();
         this.addPlayer();
-        this.state.characters = date.characters.map((character)=>({...character, isSelect:false}));
+        this.state.characters = date.characters.map((character) => ({ ...character, isSelect: false }));
         //console.log(this.state.characters)
 
 
@@ -66,7 +66,7 @@ class StartScreen extends Component {
         let updatePlayerName = this.updatePlayerName;
         let players = this.state.players;
         const htmlPlayers = players.map((player, index) =>
-            <Player key={index} player={player} index={index} removePlayer={removePlayer} updatePlayerName={updatePlayerName} updatePlayerCharacter={this.updatePlayerCharacter} characters={this.state.characters}/>
+            <Player key={index} player={player} index={index} removePlayer={removePlayer} updatePlayerName={updatePlayerName} updatePlayerCharacter={this.updatePlayerCharacter} characters={this.state.characters} selectCharacterStatus={this.selectCharacterStatus} />
         );
 
 
@@ -78,7 +78,7 @@ class StartScreen extends Component {
                         {htmlPlayers}
                         <div className="initPlayerBox" >
                             <div style={{ margin: "20px", backgroundColor: "white", width: "50px", borderRadius: "50%", height: "50px", justifyContent: "center", alignItems: "center", display: "flex" }} onClick={this.addPlayer}>
-                                <h1 style={{ fontSize: "50px",	cursor: "pointer" }}>+</h1></div>
+                                <h1 style={{ fontSize: "50px", cursor: "pointer" }}>+</h1></div>
                         </div>
                     </div>
 

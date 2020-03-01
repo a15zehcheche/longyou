@@ -54,7 +54,7 @@ class initPlayer extends Component {
             <div className="initPlayerBox">
                 <div className="initPlayer" style={mystyle} >
                     <div style={styleX} onClick={() => removePlayer(this.props.index)}><samp>x</samp></div>
-                    <Character characters={this.props.characters} updatePlayerCharacter={this.props.updatePlayerCharacter} index={this.props.index} />
+                    <Character selectCharacterStatus={this.props.selectCharacterStatus} characters={this.props.characters} updatePlayerCharacter={this.props.updatePlayerCharacter} index={this.props.index} />
                 </div>
                 <input placeholder="玩家名称" style={inputStyle} onChange={this.updatePlayerName} value={name}></input>
             </div>

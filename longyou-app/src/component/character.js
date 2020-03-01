@@ -8,21 +8,100 @@ class Character extends Component {
     }
 
     nextCharacter = () => {
-        if (this.state.characterSelect < this.state.characters.length - 1) {
-            this.setState({ characterSelect: this.state.characterSelect + 1 });
+        let index = this.state.characterSelect;
+        let indexCopy = index;
+        if (index < this.state.characters.length - 1) {
+            index += 1;
+        } else {
+            index = 0;
+        }
+        if (this.state.characters[index].isSelect) {
+            //console.log("repit")
+            if (indexCopy != 0) {
+                this.props.selectCharacterStatus(indexCopy)
+            }
+            this.selectNextRepit();
+        } else {
+            if (indexCopy != 0) {
+                this.props.selectCharacterStatus(indexCopy)
+            }
+            if (index != 0) {
+                this.props.selectCharacterStatus(index)
+            }
+            this.setState({ characterSelect: index });
+        }
+        //console.log(this.state.characters)
+    }
+    selectNextRepit = () => {
+        let index = this.state.characterSelect;
+        if (index < this.state.characters.length - 1) {
+            index += 1;
+        } else {
+            index = 0;
+        }
+
+        if (this.state.characters[index].isSelect) {
+            //console.log("repit")
+            this.state.characterSelect = index
+            this.setState({ characterSelect: index });
+            this.selectNextRepit();
+           
+        } else {
+            if (index != 0) {
+                this.props.selectCharacterStatus(index)
+            }
+            this.setState({ characterSelect: index });
 
         }
-        console.log(this.state.characterSelect)
     }
     previousCharacter = () => {
-        if (this.state.characterSelect > 0) {
-            this.setState({ characterSelect: this.state.characterSelect - 1 });
+        let index = this.state.characterSelect;
+        let indexCopy = index;
+        if (index > 0) {
+            index -= 1;
+        } else {
+            index = this.state.characters.length - 1;
+        }
+
+        if (this.state.characters[index].isSelect) {
+            //console.log("repit")
+            if (indexCopy != 0) {
+                this.props.selectCharacterStatus(indexCopy)
+            }
+            this.selectPreviousRepit();
+        } else {
+            if (indexCopy != 0) {
+                this.props.selectCharacterStatus(indexCopy)
+            }
+            if (index != 0) {
+                this.props.selectCharacterStatus(index)
+            }
+            this.setState({ characterSelect: index });
+        }
+    }
+    selectPreviousRepit = ()=>{
+        let index = this.state.characterSelect;
+        if (index > 0) {
+            index -= 1;
+        } else {
+            index = this.state.characters.length - 1;
+        }
+
+        if (this.state.characters[index].isSelect) {
+            //console.log("repit")
+            this.state.characterSelect = index
+            this.setState({ characterSelect: index });
+            this.selectPreviousRepit();
+           
+        } else {
+            if (index != 0) {
+                this.props.selectCharacterStatus(index)
+            }
+            this.setState({ characterSelect: index });
 
         }
-        console.log(this.state.characterSelect)
-
-
     }
+
     componentDidMount() {
         console.log(this.props.characters)
     }
