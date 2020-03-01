@@ -17,18 +17,20 @@ class Character extends Component {
         }
         if (this.state.characters[index].isSelect) {
             //console.log("repit")
-            if (indexCopy != 0) {
+            if (indexCopy !== 0) {
                 this.props.selectCharacterStatus(indexCopy)
             }
             this.selectNextRepit();
         } else {
-            if (indexCopy != 0) {
+            if (indexCopy !== 0) {
                 this.props.selectCharacterStatus(indexCopy)
             }
-            if (index != 0) {
+            if (index !== 0) {
                 this.props.selectCharacterStatus(index)
             }
             this.setState({ characterSelect: index });
+            this.setPlayerCharacter(this.props.index, this.state.characters[index],index);
+
         }
         //console.log(this.state.characters)
     }
@@ -45,13 +47,13 @@ class Character extends Component {
             this.state.characterSelect = index
             this.setState({ characterSelect: index });
             this.selectNextRepit();
-           
+
         } else {
-            if (index != 0) {
+            if (index !== 0) {
                 this.props.selectCharacterStatus(index)
             }
             this.setState({ characterSelect: index });
-
+            this.setPlayerCharacter(this.props.index, this.state.characters[index],index);
         }
     }
     previousCharacter = () => {
@@ -65,21 +67,24 @@ class Character extends Component {
 
         if (this.state.characters[index].isSelect) {
             //console.log("repit")
-            if (indexCopy != 0) {
+            if (indexCopy !== 0) {
                 this.props.selectCharacterStatus(indexCopy)
             }
             this.selectPreviousRepit();
         } else {
-            if (indexCopy != 0) {
+            if (indexCopy !== 0) {
                 this.props.selectCharacterStatus(indexCopy)
             }
-            if (index != 0) {
+            if (index !== 0) {
                 this.props.selectCharacterStatus(index)
             }
             this.setState({ characterSelect: index });
+            this.setPlayerCharacter(this.props.index, this.state.characters[index],index);
+
         }
+
     }
-    selectPreviousRepit = ()=>{
+    selectPreviousRepit = () => {
         let index = this.state.characterSelect;
         if (index > 0) {
             index -= 1;
@@ -92,26 +97,32 @@ class Character extends Component {
             this.state.characterSelect = index
             this.setState({ characterSelect: index });
             this.selectPreviousRepit();
-           
+
         } else {
-            if (index != 0) {
+            if (index !== 0) {
                 this.props.selectCharacterStatus(index)
             }
             this.setState({ characterSelect: index });
+            this.setPlayerCharacter(this.props.index, this.state.characters[index],index);
+        }
+    }
 
+    setPlayerCharacter = (index, date,characterIndex) => {
+        if (characterIndex == 0) {
+            this.props.updatePlayerCharacter(index, null);
+        } else {
+            this.props.updatePlayerCharacter(index, date);
         }
     }
 
     componentDidMount() {
-        console.log(this.props.characters)
+
     }
     render() {
         const mystyle = {
             display: "flex",
             alignItems: "center"
         }
-
-        this.props.updatePlayerCharacter(this.props.index, this.props.index)
         const character = {
             width: "100px",
             height: "100px",

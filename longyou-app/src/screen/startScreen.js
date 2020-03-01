@@ -18,16 +18,39 @@ class StartScreen extends Component {
     handleStartClick = () => {
         //console.log(this.state.players)
         this.setState({ players: this.state.players })
+        this.checkDate();
         this.setState({ start: true });
+    }
+    checkDate = () => {
+        this.state.players.map((player, index) => {
+            if (player.name == "") {
+                player.name = this.randomName(index);
+            }
+            if (player.character == null) {
+                player.character = this.randomCharacter();
+            }
+
+        })
+    }
+    randomName = (index) => {
+        return "Player" + (index + 1);
+    }
+    randomCharacter = () => {
+        let characterAvailable = this.state.characters.filter(character => character.isSelect == false && character.id != 0);
+        let index = Math.floor(Math.random() * characterAvailable.length)
+        this.state.characters = characterAvailable;
+        this.selectCharacterStatus(index)
+        //console.log(characterAvailable);
+        return characterAvailable[index];
     }
     addPlayer = () => {
         if (this.state.players.length < 7) {
             let player = {
-                "characterId": 0,
                 "name": "",
                 "money": null,
                 "id": null,
-                "color": null
+                "color": null,
+                "character": null,
             };
             this.state.players.push(player)
             this.setState({ players: this.state.players });
@@ -39,16 +62,17 @@ class StartScreen extends Component {
             players.splice(index, 1);
             this.setState({ players: this.state.players });
         }
-        console.log("remove player " + index);
+        //console.log("remove player " + index);
 
     }
     updatePlayerName = (index, playerName) => {
         this.state.players[index].name = playerName;
         this.setState({ players: this.state.players })
     }
-    updatePlayerCharacter = (index, characterId) => {
-        this.state.players[index].characterId = characterId;
+    updatePlayerCharacter = (index, character) => {
+        this.state.players[index].character = character;
         //this.setState({ players: this.state.players })
+
     }
     selectCharacterStatus = (index) => {
         this.state.characters[index].isSelect = !this.state.characters[index].isSelect
@@ -65,8 +89,9 @@ class StartScreen extends Component {
         let removePlayer = this.removePlayer;
         let updatePlayerName = this.updatePlayerName;
         let players = this.state.players;
+        let updatePlayerCharacter = this.updatePlayerCharacter;
         const htmlPlayers = players.map((player, index) =>
-            <Player key={index} player={player} index={index} removePlayer={removePlayer} updatePlayerName={updatePlayerName} updatePlayerCharacter={this.updatePlayerCharacter} characters={this.state.characters} selectCharacterStatus={this.selectCharacterStatus} />
+            <Player key={index} player={player} index={index} removePlayer={removePlayer} updatePlayerName={updatePlayerName} updatePlayerCharacter={updatePlayerCharacter} characters={this.state.characters} selectCharacterStatus={this.selectCharacterStatus} />
         );
 
 
