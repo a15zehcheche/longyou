@@ -232,3 +232,13 @@
 .character:hover .arraow{
   display: block;
 }
+
+
+/*--------------- CELL CSS ---------------*/
+
+
+.piece{
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import Media from 'react-media';
+import Player from './player';
 
 
 
@@ -29,17 +30,23 @@ class Cell extends Component {
             border: "3px black solid",
             boxSizing: "border-box",
         }
-
+        let players = this.props.players.filter(player => player.mapPosition == this.props.cellDate.id);
+        console.log( this.props.players)
+        let piece = players.map((player, index) => <img className="piece" key={index} src={process.env.PUBLIC_URL + player.character.img} />);
+        console.log(piece)
         return (
+            
             <Media query={{ maxWidth: 599 }}>
                 {matches =>
                     matches ? (
                         //The document is less than 600px wide.
-                        <div className="cell" style={mobileStyle}>
+                        <div id={this.props.cellDate.id} className="cell" style={mobileStyle}>
                         </div>
                     ) : (
-                        //The document is at least 600px wide.
-                            <div className="cell" style={pcStyle}>
+                            //The document is at least 600px wide.
+                            <div id={"cell" + this.props.cellDate.id} className="cell" style={pcStyle}>
+                                {piece}
+                                <a href={"#cell"+ this.props.cellDate.id}/>
                             </div>
                         )
                 }
@@ -48,4 +55,4 @@ class Cell extends Component {
         );
     }
 }
-export default Cell; // Don’t forget to use export default!
+export default Cell; // Don’t forget to use export default!  $('#cell38>a').click()

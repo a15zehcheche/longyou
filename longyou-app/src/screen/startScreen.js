@@ -10,13 +10,14 @@ import GameScreen from './gameScreen'
 class StartScreen extends Component {
 
     state = {
-        start: false,
+        //jump this page
+        start: true,
         players: [],
         characters: [],
     }
 
     handleStartClick = () => {
-        //console.log(this.state.players)
+        console.log(this.state.players)
         this.setState({ players: this.state.players })
         this.checkDate();
         this.setState({ start: true });
@@ -29,6 +30,8 @@ class StartScreen extends Component {
             if (player.character == null) {
                 player.character = this.randomCharacter();
             }
+            player.id = this.randomName(index);
+            player.mapPosition = 1;
 
         })
     }
@@ -43,6 +46,7 @@ class StartScreen extends Component {
         //console.log(characterAvailable);
         return characterAvailable[index];
     }
+
     addPlayer = () => {
         if (this.state.players.length < 7) {
             let player = {
@@ -51,6 +55,7 @@ class StartScreen extends Component {
                 "id": null,
                 "color": null,
                 "character": null,
+                "mapPosition": null,
             };
             this.state.players.push(player)
             this.setState({ players: this.state.players });
