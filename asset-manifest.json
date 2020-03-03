@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/longyou/static/css/main.b525654a.chunk.css",
-    "main.js": "/longyou/static/js/main.02d41b0d.chunk.js",
-    "main.js.map": "/longyou/static/js/main.02d41b0d.chunk.js.map",
+    "main.css": "/longyou/static/css/main.2db8263b.chunk.css",
+    "main.js": "/longyou/static/js/main.82ea8a15.chunk.js",
+    "main.js.map": "/longyou/static/js/main.82ea8a15.chunk.js.map",
     "runtime-main.js": "/longyou/static/js/runtime-main.bee49671.js",
     "runtime-main.js.map": "/longyou/static/js/runtime-main.bee49671.js.map",
     "static/js/2.5fbde230.chunk.js": "/longyou/static/js/2.5fbde230.chunk.js",
     "static/js/2.5fbde230.chunk.js.map": "/longyou/static/js/2.5fbde230.chunk.js.map",
     "index.html": "/longyou/index.html",
-    "precache-manifest.9c6be3cb80d016a3570f78bce4606819.js": "/longyou/precache-manifest.9c6be3cb80d016a3570f78bce4606819.js",
+    "precache-manifest.14b3a0d89bd68944127f184f5ca06ecb.js": "/longyou/precache-manifest.14b3a0d89bd68944127f184f5ca06ecb.js",
     "service-worker.js": "/longyou/service-worker.js",
-    "static/css/main.b525654a.chunk.css.map": "/longyou/static/css/main.b525654a.chunk.css.map",
+    "static/css/main.2db8263b.chunk.css.map": "/longyou/static/css/main.2db8263b.chunk.css.map",
     "static/js/2.5fbde230.chunk.js.LICENSE.txt": "/longyou/static/js/2.5fbde230.chunk.js.LICENSE.txt",
     "static/media/map.png": "/longyou/static/media/map.3b4be599.png"
   },
   "entrypoints": [
     "static/js/runtime-main.bee49671.js",
     "static/js/2.5fbde230.chunk.js",
-    "static/css/main.b525654a.chunk.css",
-    "static/js/main.02d41b0d.chunk.js"
+    "static/css/main.2db8263b.chunk.css",
+    "static/js/main.82ea8a15.chunk.js"
   ]
 }
