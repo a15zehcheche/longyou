@@ -14,10 +14,14 @@ class Cell extends Component {
             top: this.props.cellDate.top + "px",
             left: this.props.cellDate.left + "px",
             position: "absolute",
-            backgroundColor: "lightblue",
-            opacity: 0.5,
+            //backgroundColor: "lightblue",
+            //opacity: 0.5,
             border: "3px black solid",
             boxSizing: "border-box",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+
         }
         const mobileStyle = {
             height: this.props.cellDate.height / 2 + "px",
@@ -25,17 +29,24 @@ class Cell extends Component {
             top: this.props.cellDate.top / 2 + "px",
             left: this.props.cellDate.left / 2 + "px",
             position: "absolute",
-            backgroundColor: "lightblue",
-            opacity: 0.5,
+            //backgroundColor: "lightblue",
+            //opacity: 0.5,
             border: "3px black solid",
             boxSizing: "border-box",
         }
         let players = this.props.players.filter(player => player.mapPosition == this.props.cellDate.id);
-        console.log( this.props.players)
-        let piece = players.map((player, index) => <img className="piece" key={index} src={process.env.PUBLIC_URL + player.character.img} />);
-        console.log(piece)
+        //console.log( this.props.players)
+        let piece = players.map((player, index) => <img className="piece" id={player.id} key={index} src={process.env.PUBLIC_URL + player.character.img} />);
+        //console.log(piece)
+
+        let home = null;
+        if (this.props.cellDate.hasOwnProperty('home')) {
+           // console.log("home" + this.props.cellDate.id)
+            home = <div className="homeContainer">home</div>
+        }
+
         return (
-            
+
             <Media query={{ maxWidth: 599 }}>
                 {matches =>
                     matches ? (
@@ -45,8 +56,9 @@ class Cell extends Component {
                     ) : (
                             //The document is at least 600px wide.
                             <div id={"cell" + this.props.cellDate.id} className="cell" style={pcStyle}>
+                                {home}
                                 {piece}
-                                <a href={"#cell"+ this.props.cellDate.id}/>
+                                <a href={"#cell" + this.props.cellDate.id} />
                             </div>
                         )
                 }

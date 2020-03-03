@@ -11,7 +11,7 @@ class StartScreen extends Component {
 
     state = {
         //jump this page
-        start: true,
+        start: false,
         players: [],
         characters: [],
     }

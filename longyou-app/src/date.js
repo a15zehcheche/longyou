@@ -72,7 +72,67 @@ const Dates = {
             "money": 2000,
             "id": "Player2",
             "color": "white",
-            "mapPosition": 30,
+            "mapPosition": 1,
+        },
+        {
+            "character": {
+                "id": 4,
+                "name": "海盐包",
+                "img": "/images/4.png",
+            },
+            "name": "David",
+            "money": 2000,
+            "id": "Player3",
+            "color": "white",
+            "mapPosition": 1,
+        },
+        {
+            "character": {
+                "id": 4,
+                "name": "海盐包",
+                "img": "/images/4.png",
+            },
+            "name": "David",
+            "money": 2000,
+            "id": "Player4",
+            "color": "white",
+            "mapPosition": 1,
+        },
+        {
+            "character": {
+                "id": 4,
+                "name": "海盐包",
+                "img": "/images/4.png",
+            },
+            "name": "David",
+            "money": 2000,
+            "id": "Player5",
+            "color": "white",
+            "mapPosition": 1,
+        },
+        {
+            "character": {
+                "id": 4,
+                "name": "海盐包",
+                "img": "/images/4.png",
+            },
+            "name": "David",
+            "money": 2000,
+            "id": "Player6",
+            "color": "white",
+            "mapPosition": 1,
+        },
+        {
+            "character": {
+                "id": 4,
+                "name": "海盐包",
+                "img": "/images/4.png",
+            },
+            "name": "David",
+            "money": 2000,
+            "id": "Player7",
+            "color": "white",
+            "mapPosition": 1,
         },
     ],
     "map": {
@@ -287,6 +347,11 @@ const Dates = {
             },
             {
                 "id": 2,
+                "home":{
+                    "fangzhi":0,
+                    "kezhang":0,
+                    "propietario":"player id"
+                },
                 "height": 304,
                 "width": 182,
                 "top": 2017,

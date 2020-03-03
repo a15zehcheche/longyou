@@ -57,7 +57,7 @@ class Map extends Component {
     const Cells = date.map.cells.map((cellDate) => <Cell key={"cell" + cellDate.id} players={this.props.players} cellDate={cellDate} />);
     const Cards = date.map.cards.map((cardDate, index) => <Card key={"card" + index} cardDate={cardDate} />);
     return (
-      <div style={{ position: "relative" }}>
+   
         <div className="mapcontainer" >
           <div className="map">
             <img width="100%" src={map} alt="map" />
@@ -73,7 +73,7 @@ class Map extends Component {
             {Cards}
           </div>
         </div>
-      </div>
+    
 
     );
   }
