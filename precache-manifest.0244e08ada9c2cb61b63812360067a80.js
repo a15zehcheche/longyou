@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4b8a6df53af7a86c5780c01e0a503454",
+    "revision": "d26e23887ada60278b8f8064a73665c9",
     "url": "/longyou/index.html"
   },
   {
-    "revision": "87b338cc6fe645154c1e",
+    "revision": "4a3056f4c06ebd01d212",
     "url": "/longyou/static/css/main.2db8263b.chunk.css"
   },
   {
-    "revision": "f08204946af9887da6d6",
-    "url": "/longyou/static/js/2.5fbde230.chunk.js"
+    "revision": "dc321d86d294941a1c9e",
+    "url": "/longyou/static/js/2.77b3b18f.chunk.js"
   },
   {
     "revision": "6e498969aafde287c0e2e1a721426fda",
-    "url": "/longyou/static/js/2.5fbde230.chunk.js.LICENSE.txt"
+    "url": "/longyou/static/js/2.77b3b18f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "87b338cc6fe645154c1e",
-    "url": "/longyou/static/js/main.82ea8a15.chunk.js"
+    "revision": "4a3056f4c06ebd01d212",
+    "url": "/longyou/static/js/main.c5c0044a.chunk.js"
   },
   {
     "revision": "0be841c337c172a52191",
