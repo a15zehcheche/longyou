@@ -36,7 +36,7 @@ class Cell extends Component {
         }
         let players = this.props.players.filter(player => player.mapPosition == this.props.cellDate.id);
         //console.log( this.props.players)
-        let piece = players.map((player, index) => <img className="piece" id={player.id} key={index} src={process.env.PUBLIC_URL + player.character.img} />);
+        let piece = players.map((player, index) => <a key={index} href={"#" + player.id}> <img className="piece" id={player.id}  src={process.env.PUBLIC_URL + player.character.img} /></a>);
         //console.log(piece)
 
         let home = null;
