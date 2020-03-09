@@ -9,10 +9,10 @@ class Cell extends Component {
 
     render() {
         const pcStyle = {
-            height: this.props.cellDate.height + "px",
-            width: this.props.cellDate.width + "px",
-            top: this.props.cellDate.top + "px",
-            left: this.props.cellDate.left + "px",
+            height: this.props.cellDate.height * this.props.scale + "px",
+            width: this.props.cellDate.width * this.props.scale + "px",
+            top: this.props.cellDate.top * this.props.scale + "px",
+            left: this.props.cellDate.left * this.props.scale + "px",
             position: "absolute",
             //backgroundColor: "lightblue",
             //opacity: 0.5,
@@ -24,25 +24,36 @@ class Cell extends Component {
 
         }
         const mobileStyle = {
-            height: this.props.cellDate.height / 2 + "px",
-            width: this.props.cellDate.width / 2 + "px",
-            top: this.props.cellDate.top / 2 + "px",
-            left: this.props.cellDate.left / 2 + "px",
+            height: this.props.cellDate.height / 2 * this.props.scale + "px",
+            width: this.props.cellDate.width / 2 * this.props.scale + "px",
+            top: this.props.cellDate.top / 2 * this.props.scale + "px",
+            left: this.props.cellDate.left / 2 * this.props.scale + "px",
             position: "absolute",
             //backgroundColor: "lightblue",
             //opacity: 0.5,
             border: "3px black solid",
             boxSizing: "border-box",
         }
+
         let players = this.props.players.filter(player => player.mapPosition == this.props.cellDate.id);
         //console.log( this.props.players)
-        let piece = players.map((player, index) => <a key={index} href={"#" + player.id}> <img className="piece" id={player.id}  src={process.env.PUBLIC_URL + player.character.img} /></a>);
+        let pieceContainerStyle = {
+            width: 55 * this.props.scale + "px",
+            height: 55 * this.props.scale + "px",
+        }
+        let piece = players.map((player, index) => <div style={pieceContainerStyle} key={index} > <a href={"#" + player.id}> <img className="piece" id={player.id} src={process.env.PUBLIC_URL + player.character.img} /></a></div>);
         //console.log(piece)
 
         let home = null;
+        let space ;
+        let test = <div style={{color:"white"}}>{this.props.cellDate.id}</div>
         if (this.props.cellDate.hasOwnProperty('home')) {
-           // console.log("home" + this.props.cellDate.id)
+            // console.log("home" + this.props.cellDate.id)
             home = <div className="homeContainer">home</div>
+            space = <div className="space" style={{ width: "100%", height: "78%" }}>{test}{piece}</div>
+        }else{
+        space = <div className="space" style={{ width: "100%", height: "100%" }}>{test}{piece}</div>
+
         }
 
         return (
@@ -57,7 +68,7 @@ class Cell extends Component {
                             //The document is at least 600px wide.
                             <div id={"cell" + this.props.cellDate.id} className="cell" style={pcStyle}>
                                 {home}
-                                {piece}
+                                {space}
                                 <a href={"#cell" + this.props.cellDate.id} />
                             </div>
                         )
@@ -68,3 +79,4 @@ class Cell extends Component {
     }
 }
 export default Cell; // Don’t forget to use export default!  $('#cell38>a').click()
+

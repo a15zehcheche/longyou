@@ -1,15 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import '../App.css';
 import $ from "jquery";
 import map from '../res/map.png';
 import Cell from './cell'
 import Card from './card'
 import date from '../date'
+import Media from 'react-media';
+import equal from 'fast-deep-equal'
 
 
 
 
 class Map extends Component {
+  state = {
+    scale: this.props.scale,
+  }
+
   componentDidMount() {
     $('document').ready(function () {
       const slider = $('.mapcontainer');
@@ -54,26 +60,61 @@ class Map extends Component {
 
 
   render() {
-    const Cells = date.map.cells.map((cellDate) => <Cell key={"cell" + cellDate.id} players={this.props.players} cellDate={cellDate} />);
-    const Cards = date.map.cards.map((cardDate, index) => <Card key={"card" + index} cardDate={cardDate} />);
+    const Cells = date.map.cells.map((cellDate) => <Cell key={"cell" + cellDate.id} players={this.props.players} cellDate={cellDate} scale={this.props.scale} />);
+    const Cards = date.map.cards.map((cardDate, index) => <Card key={"card" + index} cardDate={cardDate} scale={this.props.scale} />);
+    let mapStyle = {
+      width: 2368 * this.props.scale + "px",
+      height: 2368 * this.props.scale + "px",
+    };
+    let mapStyleMobile = {
+      width: 2368 / 2 * this.props.scale + "px",
+      height: 2368 / 2 * this.props.scale + "px",
+    };
+
     return (
-   
-        <div className="mapcontainer" >
-          <div className="map">
-            <img width="100%" src={map} alt="map" />
-            <div id="bottomLeft">bottomLeft</div>
-            <div id="bottomRight">bottomRight</div>
-            <div id="topLeft">topLeft</div>
-            <div id="topRight">topRight</div>
-          </div>
-          <div>
-            {Cells}
-          </div>
-          <div>
-            {Cards}
-          </div>
-        </div>
-    
+      <Media query={{ maxWidth: 599 }}>
+        {matches =>
+          matches ? (
+            //The document is less than 600px wide.
+            <div className="mapcontainer" >
+              <div className="map" style={mapStyleMobile}>
+                <img style={{ marginBottom: "-3px", width: "100%" }} src={map} alt="map" />
+                <div id="bottomLeft">bottomLeft</div>
+                <div id="bottomRight">bottomRight</div>
+                <div id="topLeft">topLeft </div>
+                <div id="topRight">topRight</div>
+                <div>
+                  {Cells}
+                </div>
+                <div>
+                  {Cards}
+                </div>
+              </div>
+
+            </div>
+
+          ) : (
+              //The document is at least 600px wide.
+              <div className="mapcontainer" >
+                <div className="map" style={mapStyle}>
+                <img style={{ marginBottom: "-3px", width: "100%" }} src={map} alt="map" />
+                  <div id="bottomLeft">bottomLeft</div>
+                  <div id="bottomRight">bottomRight</div>
+                  <div id="topLeft">topLeft{this.props.scale}</div>
+                  <div id="topRight">topRight</div>
+                  <div>
+                    {Cells}
+                  </div>
+                  <div>
+                    {Cards}
+                  </div>
+                </div>
+
+              </div>
+            )
+        }
+      </Media>
+
 
     );
   }

@@ -51,7 +51,7 @@ class StartScreen extends Component {
         if (this.state.players.length < 7) {
             let player = {
                 "name": "",
-                "money": null,
+                "money": 5000,
                 "id": null,
                 "color": null,
                 "character": null,
