@@ -10,8 +10,7 @@ import SweetAlert from 'sweetalert2-react';
 import Swal from 'sweetalert2'
 import 'sweetalert2/src/sweetalert2.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import { ButtonToolbar, Button, Modal } from 'react-bootstrap';
 
 
 class GameScreen extends Component {
@@ -26,8 +25,7 @@ class GameScreen extends Component {
             caminarInterval: null,
             scale: 1,
             value: 10,
-
-
+            show: false
         }
     }
 
@@ -84,7 +82,7 @@ class GameScreen extends Component {
                     timer: 2000
                 })
                 this.state.players[this.state.point].money += cellAction.action.value;
-                this.setState({players : this.state.players})
+                this.setState({ players: this.state.players })
             }
             if (cellAction.action.hasOwnProperty("question")) {
                 const swalWithBootstrapButtons = Swal.mixin({
@@ -96,7 +94,7 @@ class GameScreen extends Component {
                 })
 
                 swalWithBootstrapButtons.fire({
-                    title: '购买发地产',
+                    title: '购买房地产',
                     text: cellAction.action.question.missage,
                     icon: 'warning',
                     showCancelButton: true,
@@ -113,7 +111,7 @@ class GameScreen extends Component {
                             icon: 'success',
                         })
                         this.state.players[this.state.point].money += cellAction.action.question.value;
-                        this.setState({players : this.state.players})
+                        this.setState({ players: this.state.players })
                         /*
                         swalWithBootstrapButtons.fire(
                             '提示',
@@ -140,6 +138,15 @@ class GameScreen extends Component {
 
     }
 
+    closeModal = () => {
+        this.state.show = false;
+        this.setState({ show: this.state.show })
+    }
+    showModal = () => {
+        this.state.show = true;
+        this.setState({ show: this.state.show })
+    }
+
     render() {
         const players = this.state.players.map((playerDate, index) => <Player key={index} date={playerDate} />);
 
@@ -159,8 +166,6 @@ class GameScreen extends Component {
                     <div>
                         <div>pases {this.state.dau}</div>
                         <div>next player: {this.state.players[this.state.point].id}</div>
-                        <div>{this.state.scale}</div>
-                        <div>{this.state.value}</div>
                         <div>
 
                         </div>
@@ -172,6 +177,27 @@ class GameScreen extends Component {
                                 onChange={scale => { this.setState({ value: scale }); scale /= 10; this.setState({ scale }); }} />
                         </div>
 
+                        <Button variant="primary" onClick={this.showModal}>
+                            Launch vertically centered modal </Button>
+
+                        <Modal show={this.state.show} size="lg"
+                            aria-labelledby="contained-modal-title-vcenter"
+                            centered
+                            onHide={this.closeModal}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>{ this.state.players[this.state.point].name}</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+
+
+                                Woohoo, you're reading this text in a modal!
+
+                                </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={this.closeModal}>
+                                    Close  </Button>
+                            </Modal.Footer>
+                        </Modal>
 
 
                         <button onClick={this.next}>next</button>

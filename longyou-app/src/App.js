@@ -51,6 +51,26 @@ function App() {
  
   );
 }
+
+
+
+import React, { Component } from 'react';
+import '../App.css';
+
+class Player extends Component {
+    render() {
+        const mystyle = {
+            backgroundColor: this.props.date.color,
+            display: "flex",
+        }
+        return (
+            <div className="player" style={mystyle}>
+              test
+            </div>
+        );
+    }
+}
+export default Player; // Don’t forget to use export default!
    */
 
 export default App;

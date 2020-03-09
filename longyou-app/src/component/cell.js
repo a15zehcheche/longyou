@@ -19,8 +19,7 @@ class Cell extends Component {
             border: "3px black solid",
             boxSizing: "border-box",
             display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
+            flexDirection: "column",
 
         }
         const mobileStyle = {
@@ -45,20 +44,63 @@ class Cell extends Component {
         //console.log(piece)
 
         let home = null;
-        let space ;
-        let test = <div style={{color:"white"}}>{this.props.cellDate.id}</div>
+        let space;
+        let test = <div style={{ color: "white" }}>{this.props.cellDate.id}</div>
+
+        let homeStyle = {
+            width: "100%",
+            height: "23%",
+        }
+        let spaceStyle = {
+            width: "100%",
+            height: "77%"
+        }
         if (this.props.cellDate.hasOwnProperty('home')) {
+            if (this.props.cellDate.home.position == "top") {
+                homeStyle.marginBottom = "2px"
+
+            } else if (this.props.cellDate.home.position == "bottom") {
+                pcStyle.flexDirection = "column-reverse";
+
+            } else if (this.props.cellDate.home.position == "left") {
+                pcStyle.flexDirection = "row"
+                homeStyle.width = "22%"
+                homeStyle.height = "100%"
+                homeStyle.marginRight= "5px"
+                spaceStyle.width ="78%"
+                spaceStyle.height = "100%"
+            } else if (this.props.cellDate.home.position == "right") {
+                pcStyle.flexDirection = "row-reverse"
+                homeStyle.width = "22%"
+                homeStyle.height = "100%"
+                homeStyle.marginLeft= "5px"
+                spaceStyle.width ="78%"
+                spaceStyle.height = "100%"
+
+            }
             // console.log("home" + this.props.cellDate.id)
-            home = <div className="homeContainer">home</div>
-            space = <div className="space" style={{ width: "100%", height: "78%" }}>{test}{piece}</div>
-        }else{
-        space = <div className="space" style={{ width: "100%", height: "100%" }}>{test}{piece}</div>
+            home = <div style={homeStyle} className="homeContainer">home</div>
+            space = <div className="space" style={spaceStyle}>{test}{piece}</div>
+        } else {
+            space = <div className="space" style={{ width: "100%", height: "100%" }}>{test}{piece}</div>
 
         }
 
         return (
+            <div id={"cell" + this.props.cellDate.id} className="cell" style={pcStyle}>
+                {home}
+                {space}
+                <a href={"#cell" + this.props.cellDate.id} />
+            </div>
 
-            <Media query={{ maxWidth: 599 }}>
+
+        );
+    }
+}
+export default Cell; // Don’t forget to use export default!  $('#cell38>a').click()
+
+/*
+   <Media query={{ maxWidth: 599 }}>
                 {matches =>
                     matches ? (
                         //The document is less than 600px wide.
@@ -74,9 +116,4 @@ class Cell extends Component {
                         )
                 }
             </Media>
-
-        );
-    }
-}
-export default Cell; // Don’t forget to use export default!  $('#cell38>a').click()
-
+*/

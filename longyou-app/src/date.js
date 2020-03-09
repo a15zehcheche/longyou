@@ -150,6 +150,7 @@ const Dates = {
                 }
             },
             {
+             
                 "id": 22,
                 "height": 304,
                 "width": 182,
@@ -160,7 +161,13 @@ const Dates = {
                         "missage": "购买此地220两",
                         "value": -220,
                     }
-                }
+                },
+                "home": {
+                    "fangzhi": 0,
+                    "kezhang": 0,
+                    "propietario": false,
+                    "position":"bottom"
+                },
             },
             {
                 "id": 23,
@@ -184,7 +191,13 @@ const Dates = {
                         "missage": "购买此地220两",
                         "value": -220,
                     }
-                }
+                },
+                "home": {
+                    "fangzhi": 0,
+                    "kezhang": 0,
+                    "propietario": false,
+                    "position":"bottom"
+                },
             },
             {
                 "id": 25,
@@ -197,7 +210,13 @@ const Dates = {
                         "missage": "购买此地240两",
                         "value": -240,
                     }
-                }
+                },
+                "home": {
+                    "fangzhi": 0,
+                    "kezhang": 0,
+                    "propietario": false,
+                    "position":"bottom"
+                },
             },
             {
                 "id": 26,
@@ -221,7 +240,13 @@ const Dates = {
                         "missage": "购买此地260两",
                         "value": -260,
                     }
-                }
+                },
+                "home": {
+                    "fangzhi": 0,
+                    "kezhang": 0,
+                    "propietario": false,
+                    "position":"bottom"
+                },
             },
             {
                 "id": 28,
@@ -234,7 +259,13 @@ const Dates = {
                         "missage": "购买此地260两",
                         "value": -260,
                     }
-                }
+                },
+                "home": {
+                    "fangzhi": 0,
+                    "kezhang": 0,
+                    "propietario": false,
+                    "position":"bottom"
+                },
             },
             {
                 "id": 29,
@@ -258,7 +289,13 @@ const Dates = {
                         "missage": "购买此地280两",
                         "value": -280,
                     }
-                }
+                },
+                "home": {
+                    "fangzhi": 0,
+                    "kezhang": 0,
+                    "propietario": false,
+                    "position":"bottom"
+                },
             },
             //right
 
@@ -284,7 +321,13 @@ const Dates = {
                         "missage": "购买此地300两",
                         "value": -300,
                     }
-                }
+                },
+                "home": {
+                    "fangzhi": 0,
+                    "kezhang": 0,
+                    "propietario": false,
+                    "position":"left"
+                },
             },
             {
                 "id": 33,
@@ -297,7 +340,13 @@ const Dates = {
                         "missage": "购买此地300两",
                         "value": -300,
                     }
-                }
+                },
+                "home": {
+                    "fangzhi": 0,
+                    "kezhang": 0,
+                    "propietario": false,
+                    "position":"left"
+                },
             },
             {
                 "id": 34,
@@ -321,7 +370,13 @@ const Dates = {
                         "missage": "购买此地320两",
                         "value": -320,
                     }
-                }
+                },
+                "home": {
+                    "fangzhi": 0,
+                    "kezhang": 0,
+                    "propietario": false,
+                    "position":"left"
+                },
             },
             {
                 "id": 36,
@@ -356,7 +411,13 @@ const Dates = {
                         "missage": "购买此地350两",
                         "value": -350,
                     }
-                }
+                },
+                "home": {
+                    "fangzhi": 0,
+                    "kezhang": 0,
+                    "propietario": false,
+                    "position":"left"
+                },
             },
             {
                 "id": 39,
@@ -380,7 +441,13 @@ const Dates = {
                         "missage": "购买此地400两",
                         "value": -400,
                     }
-                }
+                },
+                "home": {
+                    "fangzhi": 0,
+                    "kezhang": 0,
+                    "propietario": false,
+                    "position":"left"
+                },
             },
             //bottom
 
@@ -396,7 +463,8 @@ const Dates = {
                 "home": {
                     "fangzhi": 0,
                     "kezhang": 0,
-                    "propietario": false
+                    "propietario": false,
+                    "position":"top"
                 },
                 "height": 304,
                 "width": 182,
@@ -414,7 +482,8 @@ const Dates = {
                 "home": {
                     "fangzhi": 0,
                     "kezhang": 0,
-                    "propietario": false
+                    "propietario": false,
+                    "position":"top"
                 },
                 "height": 304,
                 "width": 182,
@@ -443,7 +512,8 @@ const Dates = {
                 "home": {
                     "fangzhi": 0,
                     "kezhang": 0,
-                    "propietario": false
+                    "propietario": false,
+                    "position":"top"
                 },
                 "height": 304,
                 "width": 182,
@@ -484,7 +554,8 @@ const Dates = {
                 "home": {
                     "fangzhi": 0,
                     "kezhang": 0,
-                    "propietario": false
+                    "propietario": false,
+                    "position":"top"
                 },
                 "height": 304,
                 "width": 182,
@@ -513,7 +584,8 @@ const Dates = {
                 "home": {
                     "fangzhi": 0,
                     "kezhang": 0,
-                    "propietario": false
+                    "propietario": false,
+                    "position":"top"
                 },
                 "height": 304,
                 "width": 182,
@@ -535,6 +607,7 @@ const Dates = {
             },
             //left
             {
+              
                 "id": 20,
                 "height": 182,
                 "width": 304,
@@ -545,9 +618,16 @@ const Dates = {
                         "missage": "购买此地200两",
                         "value": -200,
                     }
-                }
+                },
+                "home": {
+                    "fangzhi": 0,
+                    "kezhang": 0,
+                    "propietario": false,
+                    "position":"right"
+                },
             },
             {
+               
                 "id": 19,
                 "height": 182,
                 "width": 304,
@@ -558,7 +638,13 @@ const Dates = {
                         "missage": "购买此地180两",
                         "value": -180,
                     }
-                }
+                },
+                "home": {
+                    "fangzhi": 0,
+                    "kezhang": 0,
+                    "propietario": false,
+                    "position":"right"
+                },
             },
             {
                 "id": 18,
@@ -572,6 +658,7 @@ const Dates = {
                 }
             },
             {
+                
                 "id": 17,
                 "height": 182,
                 "width": 304,
@@ -582,7 +669,13 @@ const Dates = {
                         "missage": "购买此地180两",
                         "value": -180,
                     }
-                }
+                },
+                "home": {
+                    "fangzhi": 0,
+                    "kezhang": 0,
+                    "propietario": false,
+                    "position":"right"
+                },
             },
             {
                 "id": 16,
@@ -596,6 +689,7 @@ const Dates = {
                 }
             },
             {
+               
                 "id": 15,
                 "height": 182,
                 "width": 304,
@@ -606,9 +700,16 @@ const Dates = {
                         "missage": "购买此地160两",
                         "value": -160,
                     }
-                }
+                },
+                "home": {
+                    "fangzhi": 0,
+                    "kezhang": 0,
+                    "propietario": false,
+                    "position":"right"
+                },
             },
             {
+              
                 "id": 14,
                 "height": 182,
                 "width": 304,
@@ -619,7 +720,13 @@ const Dates = {
                         "missage": "购买此地140两",
                         "value": -140,
                     }
-                }
+                },
+                "home": {
+                    "fangzhi": 0,
+                    "kezhang": 0,
+                    "propietario": false,
+                    "position":"right"
+                },
             },
             {
                 "id": 13,
@@ -633,6 +740,7 @@ const Dates = {
                 }
             },
             {
+               
                 "id": 12,
                 "height": 182,
                 "width": 304,
@@ -643,7 +751,13 @@ const Dates = {
                         "missage": "购买此地140两",
                         "value": -140,
                     }
-                }
+                },
+                "home": {
+                    "fangzhi": 0,
+                    "kezhang": 0,
+                    "propietario": false,
+                    "position":"right"
+                },
             },
         ],
         "cards": [

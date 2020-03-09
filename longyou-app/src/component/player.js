@@ -19,8 +19,10 @@ class Player extends Component {
                     <ul>
                         <li>name : {this.props.date.name}</li>
                         <li>money: {this.props.date.money}</li>
-                       
                     </ul>
+                </div>
+                <div className="playerInfo">
+                    <img alt ="info"/>
                 </div>
             </div>
         );
