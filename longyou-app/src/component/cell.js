@@ -16,7 +16,7 @@ class Cell extends Component {
             position: "absolute",
             //backgroundColor: "lightblue",
             //opacity: 0.5,
-            border: "3px black solid",
+            border: "2px black solid",
             boxSizing: "border-box",
             display: "flex",
             flexDirection: "column",

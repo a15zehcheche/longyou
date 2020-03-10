@@ -25,7 +25,8 @@ class GameScreen extends Component {
             caminarInterval: null,
             scale: 1,
             value: 10,
-            show: false
+            show: false,
+            showPlayerInfoId:null,
         }
     }
 
@@ -52,11 +53,13 @@ class GameScreen extends Component {
 
     }
     caminar = () => {
+
+        this.state.players[this.state.point].mapPosition += 1;
+        this.setState({ players: this.state.players })
+
         if (this.state.players[this.state.point].mapPosition > 40) {
             this.state.players[this.state.point].mapPosition -= 40;
         }
-        this.state.players[this.state.point].mapPosition += 1;
-        this.setState({ players: this.state.players })
 
         // let playerLink = "#" + this.state.players[this.state.point].id;
         //$(playerLink).click()
@@ -146,9 +149,16 @@ class GameScreen extends Component {
         this.state.show = true;
         this.setState({ show: this.state.show })
     }
+    showPlayerInfo = (playerId) => {
+        this.state.showPlayerInfoId = playerId;
+        this.state.show = true;
+        this.setState({ show: this.state.show })
+
+        console.log(playerId);
+    }
 
     render() {
-        const players = this.state.players.map((playerDate, index) => <Player key={index} date={playerDate} />);
+        const players = this.state.players.map((playerDate, index) => <Player key={index} date={playerDate} showPlayerInfo={this.showPlayerInfo} />);
 
         return (
             <div style={{ display: "flex" }}>
@@ -185,7 +195,7 @@ class GameScreen extends Component {
                             centered
                             onHide={this.closeModal}>
                             <Modal.Header closeButton>
-                                <Modal.Title>{ this.state.players[this.state.point].name}</Modal.Title>
+                                <Modal.Title>{this.state.showPlayerInfoId}</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
 

@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import '../App.css';
 
 class Player extends Component {
+    showPlayerInfo = () => {
+        this.props.showPlayerInfo(this.props.date.id)
+    }
     render() {
         const mystyle = {
             backgroundColor: this.props.date.color,
             display: "flex",
         }
+
         return (
             <div className="player" style={mystyle}>
                 <div className="character_img_container">
@@ -22,7 +26,7 @@ class Player extends Component {
                     </ul>
                 </div>
                 <div className="playerInfo">
-                    <img alt ="info"/>
+                    <img onClick={this.showPlayerInfo} alt="info" />
                 </div>
             </div>
         );
