@@ -53,9 +53,9 @@ class StartScreen extends Component {
                 "name": "",
                 "money": 5000,
                 "id": null,
-                "color": null,
                 "character": null,
                 "mapPosition": null,
+                "deeds":[],
             };
             this.state.players.push(player)
             this.setState({ players: this.state.players });

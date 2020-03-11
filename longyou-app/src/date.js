@@ -5,215 +5,517 @@ const Dates = {
             "id": 0,
             "name": "随机包",
             "img": "/images/0.jpg",
+            "color": "",
         },
         {
             "id": 1,
             "name": "豆沙包",
             "img": "/images/1.png",
+            "color": "#c23934",
         },
         {
             "id": 2,
             "name": "柠檬包",
             "img": "/images/2.png",
+            "color": "#fbc900",
         },
         {
             "id": 3,
             "name": "蔬菜包",
             "img": "/images/3.png",
+            "color": "#6ea224",
         },
         {
             "id": 4,
             "name": "海盐包",
             "img": "/images/4.png",
+            "color": "#2bb1e4",
         },
         {
             "id": 5,
             "name": "眼影包",
             "img": "/images/5.png",
+            "color": "#5762a7",
         },
         {
             "id": 6,
             "name": "可乐包",
             "img": "/images/6.png",
+            "color": "#7e4f16",
         },
         {
             "id": 7,
             "name": "非洲包",
             "img": "/images/7.png",
+            "color": "#1e120d",
         },
     ],
-    "deed":[
+    "houseImg": "/images/home/house.png",
+    "innImg": "/images/home/inn.png",
+    "deeds": [
         {
-            "name":"shenwei",
-            "Tolls":{
-                "house":{
-                    0:80,
-                    1:200,
-                    2:600,
-                    3:1400,
-                    4:1700,
-                },
-                "inn":{
-                    1:2000
-                }
+            "name": "shenwei",
+            "img": "/images/deed/1.png",
+            "Tolls": {
+                "house": [
+                    80,
+                    200,
+                    600,
+                    1400,
+                    1700,
+                ],
+                "inn": [
+                    0,
+                    2000,
+                ]
             },
-            "Build":{
-                "house":200,
-                "inn":200
+            "Build": {
+                "house": 200,
+                "inn": 200
             }
         },
         {
-            "name":"yezun",
-            "Tolls":{
-                "house":{
-                    0:75,
-                    1:175,
-                    2:500,
-                    3:1100,
-                    4:1300,
-                },
-                "inn":{
-                    1:1500
-                }
+            "name": "yezun",
+            "img": "/images/deed/2.png",
+            "Tolls": {
+                "house": [
+                    75,
+                    175,
+                    500,
+                    1100,
+                    1300,
+                ],
+                "inn": [
+                    0,
+                    1500,
+                ]
             },
-            "Build":{
-                "house":200,
-                "inn":200
+            "Build": {
+                "house": 200,
+                "inn": 200
             }
         },
         {
-            "name":"xiaojing",
-            "Tolls":{
-                "house":{
-                    0:70,
-                    1:150,
-                    2:450,
-                    3:1000,
-                    4:1200,
-                },
-                "inn":{
-                    1:1400
-                }
+            "name": "xiaojing",
+            "img": "/images/deed/3.png",
+            "Tolls": {
+                "house": [
+                    70,
+                    150,
+                    450,
+                    1000,
+                    1200,
+                ],
+                "inn": [
+                    0,
+                    1400,
+                ]
             },
-            "Build":{
-                "house":200,
-                "inn":200
+            "Build": {
+                "house": 200,
+                "inn": 200
             }
         },
         {
-            "name":"qiheng",
-            "Tolls":{
-                "house":{
-                    0:65,
-                    1:130,
-                    2:390,
-                    3:900,
-                    4:1100,
-                },
-                "inn":{
-                    1:1275
-                }
+            "name": "qiheng",
+            "img": "/images/deed/4.png",
+            "Tolls": {
+                "house": [
+                    65,
+                    130,
+                    390,
+                    900,
+                    1100,
+                ],
+                "inn": [
+                    0,
+                    1275,
+                ]
             },
-            "Build":{
-                "house":200,
-                "inn":200
+            "Build": {
+                "house": 200,
+                "inn": 200
             }
         },
         {
-            "name":"luofusheng",
-            "Tolls":{
-                "house":{
-                    0:65,
-                    1:130,
-                    2:390,
-                    3:900,
-                    4:1100,
-                },
-                "inn":{
-                    1:1275
-                }
+            "name": "luofusheng",
+            "img": "/images/deed/5.png",
+            "Tolls": {
+                "house": [
+                    65,
+                    130,
+                    390,
+                    900,
+                    1100,
+                ],
+                "inn": [
+                    0,
+                    1275,
+                ]
             },
-            "Build":{
-                "house":200,
-                "inn":200
+            "Build": {
+                "house": 200,
+                "inn": 200
             }
         },
         {
-            "name":"chou",
-            "Tolls":{
-                "house":{
-                    0:60,
-                    1:120,
-                    2:360,
-                    3:850,
-                    4:1025,
-                },
-                "inn":{
-                    1:1200
-                }
+            "name": "chou",
+            "img": "/images/deed/6.png",
+            "Tolls": {
+                "house": [
+                    60,
+                    120,
+                    360,
+                    850,
+                    1025,
+                ],
+                "inn": [
+                    0,
+                    1200,
+                ]
             },
-            "Build":{
-                "house":150,
-                "inn":150
+            "Build": {
+                "house": 150,
+                "inn": 150
             }
         },
         {
-            "name":"chirui",
-            "Tolls":{
-                "house":{
-                    0:55,
-                    1:110,
-                    2:330,
-                    3:800,
-                    4:975,
-                },
-                "inn":{
-                    1:1150
-                }
+            "name": "chirui",
+            "img": "/images/deed/7.png",
+            "Tolls": {
+                "house": [
+                    55,
+                    110,
+                    330,
+                    800,
+                    975,
+                ],
+                "inn": [
+                    0,
+                    1150,
+                ]
             },
-            "Build":{
-                "house":150,
-                "inn":150
+            "Build": {
+                "house": 150,
+                "inn": 150
             }
         },
         {
-            "name":"wuxie",
-            "Tolls":{
-                "house":{
-                    0:55,
-                    1:110,
-                    2:330,
-                    3:800,
-                    4:975,
-                },
-                "inn":{
-                    1:1150
-                }
+            "name": "wuxie",
+            "img": "/images/deed/8.png",
+            "Tolls": {
+                "house": [
+                    55,
+                    110,
+                    330,
+                    800,
+                    975,
+                ],
+                "inn": [
+                    0,
+                    1150,
+                ]
             },
-            "Build":{
-                "house":150,
-                "inn":150
+            "Build": {
+                "house": 150,
+                "inn": 150
             }
         },
         {
-            "name":"lianchengbi",
-            "Tolls":{
-                "house":{
-                    0:50,
-                    1:100,
-                    2:300,
-                    3:750,
-                    4:925,
-                },
-                "inn":{
-                    1:1100
-                }
+            "name": "lianchengbi",
+            "img": "/images/deed/9.png",
+            "Tolls": {
+                "house": [
+                    50,
+                    100,
+                    300,
+                    750,
+                    925,
+                ],
+                "inn": [
+                    0,
+                    1100,
+                ]
             },
-            "Build":{
-                "house":150,
-                "inn":150
+            "Build": {
+                "house": 150,
+                "inn": 150
             }
         },
+        {
+            "name": "jingran",
+            "img": "/images/deed/10.png",
+            "Tolls": {
+                "house": [
+                    45,
+                    90,
+                    250,
+                    700,
+                    875,
+                ],
+                "inn": [
+                    0,
+                    1050,
+                ]
+            },
+            "Build": {
+                "house": 150,
+                "inn": 150
+            }
+        },
+        {
+            "name": "pangjia",
+            "img": "/images/deed/11.png",
+            "Tolls": {
+                "house": [
+                    45,
+                    90,
+                    250,
+                    700,
+                    875,
+                ],
+                "inn": [
+                    0,
+                    1050,
+                ]
+            },
+            "Build": {
+                "house": 150,
+                "inn": 150
+            }
+        },
+        {
+            "name": "fuhongxue",
+            "img": "/images/deed/12.png",
+            "Tolls": {
+                "house": [
+                    40,
+                    80,
+                    220,
+                    600,
+                    800,
+                ],
+                "inn": [
+                    0,
+                    1000,
+                ]
+            },
+            "Build": {
+                "house": 100,
+                "inn": 100
+            }
+        },
+        {
+            "name": "huawuxie",
+            "img": "/images/deed/13.png",
+            "Tolls": {
+                "house": [
+                    35,
+                    70,
+                    200,
+                    550,
+                    750,
+                ],
+                "inn": [
+                    0,
+                    950,
+                ]
+            },
+            "Build": {
+                "house": 100,
+                "inn": 100
+            }
+        },
+        {
+            "name": "fuchengxun",
+            "img": "/images/deed/14.png",
+            "Tolls": {
+                "house": [
+                    35,
+                    70,
+                    200,
+                    550,
+                    750,
+                ],
+                "inn": [
+                    0,
+                    950,
+                ]
+            },
+            "Build": {
+                "house": 100,
+                "inn": 100
+            }
+        },
+        {
+            "name": "zhuhouzhao",
+            "img": "/images/deed/15.png",
+            "Tolls": {
+                "house": [
+                    30,
+                    60,
+                    180,
+                    500,
+                    700,
+                ],
+                "inn": [
+                    0,
+                    900,
+                ]
+            },
+            "Build": {
+                "house": 100,
+                "inn": 100
+            }
+        },
+        {
+            "name": "mengshaohui",
+            "img": "/images/deed/16.png",
+            "Tolls": {
+                "house": [
+                    25,
+                    50,
+                    150,
+                    450,
+                    625,
+                ],
+                "inn": [
+                    0,
+                    750,
+                ]
+            },
+            "Build": {
+                "house": 100,
+                "inn": 100
+            }
+        },
+        {
+            "name": "hekaixin",
+            "img": "/images/deed/17.png",
+            "Tolls": {
+                "house": [
+                    25,
+                    50,
+                    150,
+                    450,
+                    625,
+                ],
+                "inn": [
+                    0,
+                    750,
+                ]
+            },
+            "Build": {
+                "house": 100,
+                "inn": 100
+            }
+        },
+        {
+            "name": "fengdouzi",
+            "img": "/images/deed/18.png",
+            "Tolls": {
+                "house": [
+                    20,
+                    40,
+                    100,
+                    300,
+                    450,
+                ],
+                "inn": [
+                    0,
+                    600,
+                ]
+            },
+            "Build": {
+                "house": 50,
+                "inn": 50
+            }
+        },
+        {
+            "name": "yingji",
+            "img": "/images/deed/19.png",
+            "Tolls": {
+                "house": [
+                    15,
+                    30,
+                    90,
+                    270,
+                    400,
+                ],
+                "inn": [
+                    0,
+                    550,
+                ]
+            },
+            "Build": {
+                "house": 50,
+                "inn": 50
+            }
+        },
+        {
+            "name": "lingzimo",
+            "img": "/images/deed/20.png",
+            "Tolls": {
+                "house": [
+                    15,
+                    30,
+                    90,
+                    270,
+                    400,
+                ],
+                "inn": [
+                    0,
+                    550,
+                ]
+            },
+            "Build": {
+                "house": 50,
+                "inn": 50
+            }
+        },
+        {
+            "name": "huyang",
+            "img": "/images/deed/21.png",
+            "Tolls": {
+                "house": [
+                    10,
+                    20,
+                    60,
+                    180,
+                    320,
+                ],
+                "inn": [
+                    0,
+                    450,
+                ]
+            },
+            "Build": {
+                "house": 50,
+                "inn": 50
+            }
+        },
+        {
+            "name": "fanwei",
+            "img": "/images/deed/22.png",
+            "Tolls": {
+                "house": [
+                    5,
+                    10,
+                    30,
+                    100,
+                    160,
+                ],
+                "inn": [
+                    0,
+                    250,
+                ]
+            },
+            "Build": {
+                "house": 50,
+                "inn": 50
+            }
+        },
+
     ],
     "player": {
         "character": null,
@@ -322,7 +624,7 @@ const Dates = {
                 }
             },
             {
-             
+
                 "id": 22,
                 "height": 304,
                 "width": 182,
@@ -335,10 +637,11 @@ const Dates = {
                     }
                 },
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "pangjia",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"bottom"
+                    "position": "bottom"
                 },
             },
             {
@@ -365,10 +668,11 @@ const Dates = {
                     }
                 },
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "jingran",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"bottom"
+                    "position": "bottom"
                 },
             },
             {
@@ -384,10 +688,11 @@ const Dates = {
                     }
                 },
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "lianchengbi",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"bottom"
+                    "position": "bottom"
                 },
             },
             {
@@ -414,10 +719,11 @@ const Dates = {
                     }
                 },
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "wuxie",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"bottom"
+                    "position": "bottom"
                 },
             },
             {
@@ -433,10 +739,11 @@ const Dates = {
                     }
                 },
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "chirui",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"bottom"
+                    "position": "bottom"
                 },
             },
             {
@@ -463,10 +770,11 @@ const Dates = {
                     }
                 },
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "qiheng",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"bottom"
+                    "position": "bottom"
                 },
             },
             //right
@@ -495,10 +803,11 @@ const Dates = {
                     }
                 },
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "luofusheng",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"left"
+                    "position": "left"
                 },
             },
             {
@@ -514,10 +823,11 @@ const Dates = {
                     }
                 },
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "chou",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"left"
+                    "position": "left"
                 },
             },
             {
@@ -544,10 +854,11 @@ const Dates = {
                     }
                 },
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "xiaojing",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"left"
+                    "position": "left"
                 },
             },
             {
@@ -585,10 +896,11 @@ const Dates = {
                     }
                 },
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "yezun",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"left"
+                    "position": "left"
                 },
             },
             {
@@ -615,10 +927,11 @@ const Dates = {
                     }
                 },
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "shenwei",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"left"
+                    "position": "left"
                 },
             },
             //bottom
@@ -633,10 +946,11 @@ const Dates = {
             {
                 "id": 10,
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "fengdouzi",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"top"
+                    "position": "top"
                 },
                 "height": 304,
                 "width": 182,
@@ -652,10 +966,11 @@ const Dates = {
             {
                 "id": 9,
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "yingji",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"top"
+                    "position": "top"
                 },
                 "height": 304,
                 "width": 182,
@@ -682,10 +997,11 @@ const Dates = {
             {
                 "id": 7,
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "lingzimo",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"top"
+                    "position": "top"
                 },
                 "height": 304,
                 "width": 182,
@@ -724,10 +1040,11 @@ const Dates = {
             {
                 "id": 4,
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "huyang",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"top"
+                    "position": "top"
                 },
                 "height": 304,
                 "width": 182,
@@ -754,10 +1071,11 @@ const Dates = {
             {
                 "id": 2,
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "fanwei",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"top"
+                    "position": "top"
                 },
                 "height": 304,
                 "width": 182,
@@ -779,7 +1097,7 @@ const Dates = {
             },
             //left
             {
-              
+
                 "id": 20,
                 "height": 182,
                 "width": 304,
@@ -792,14 +1110,15 @@ const Dates = {
                     }
                 },
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "fuhongxue",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"right"
+                    "position": "right"
                 },
             },
             {
-               
+
                 "id": 19,
                 "height": 182,
                 "width": 304,
@@ -812,10 +1131,11 @@ const Dates = {
                     }
                 },
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "huawuxie",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"right"
+                    "position": "right"
                 },
             },
             {
@@ -830,7 +1150,7 @@ const Dates = {
                 }
             },
             {
-                
+
                 "id": 17,
                 "height": 182,
                 "width": 304,
@@ -843,10 +1163,11 @@ const Dates = {
                     }
                 },
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "fuchengxun",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"right"
+                    "position": "right"
                 },
             },
             {
@@ -861,7 +1182,7 @@ const Dates = {
                 }
             },
             {
-               
+
                 "id": 15,
                 "height": 182,
                 "width": 304,
@@ -874,14 +1195,15 @@ const Dates = {
                     }
                 },
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "zhuhouzhao",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"right"
+                    "position": "right"
                 },
             },
             {
-              
+
                 "id": 14,
                 "height": 182,
                 "width": 304,
@@ -894,10 +1216,11 @@ const Dates = {
                     }
                 },
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "mengshaohui",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"right"
+                    "position": "right"
                 },
             },
             {
@@ -912,7 +1235,7 @@ const Dates = {
                 }
             },
             {
-               
+
                 "id": 12,
                 "height": 182,
                 "width": 304,
@@ -925,10 +1248,11 @@ const Dates = {
                     }
                 },
                 "home": {
-                    "fangzhi": 0,
-                    "kezhang": 0,
+                    "name": "hekaixin",
+                    "house": 0,
+                    "inn": 0,
                     "propietario": false,
-                    "position":"right"
+                    "position": "right"
                 },
             },
         ],

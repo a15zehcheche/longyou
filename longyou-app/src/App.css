@@ -107,8 +107,9 @@ button{
     background-color: lightskyblue;
 }
 
+.homeContainer img{
 
-
+}
 
 /*--------------- PLAYER CSS ---------------*/
 
@@ -163,6 +164,19 @@ button{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.deedContainer{
+    width: 100%;
+    height: 450px;
+    display: flex;
+    overflow-x: scroll;
+}
+.deed{
+    height: 100%;
+    padding: 20px;
+}
+.deed img{
+    height: 100%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -254,6 +268,10 @@ button{
 
 /*--------------- CELL CSS ---------------*/
 
+.pieceActive{
+    border-radius: 50%;
+    box-shadow: rgb(179, 179, 179) 0px 0px 5px 1px;
+}
 .piece {
     width: 100%;
     height: 100%;
@@ -263,5 +281,6 @@ button{
 .space{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }

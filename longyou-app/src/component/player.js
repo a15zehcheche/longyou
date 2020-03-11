@@ -14,8 +14,8 @@ class Player extends Component {
         return (
             <div className="player" style={mystyle}>
                 <div className="character_img_container">
-                    <a href={"#" + this.props.date.id}>
-                        <img className="character_img" src={process.env.PUBLIC_URL + this.props.date.character.img} />
+                    <a href={"#" + this.props.date.id}> 
+                        <img className="character_img" src={process.env.PUBLIC_URL + this.props.date.character.img} alt="img" />
                     </a>
                 </div>
                 <div className="playerDate">
@@ -26,7 +26,7 @@ class Player extends Component {
                     </ul>
                 </div>
                 <div className="playerInfo">
-                    <img onClick={this.showPlayerInfo} alt="info" />
+                    <img style={{cursor: "pointer"}} src={process.env.PUBLIC_URL +"/images/icons8-info-24.png"} onClick={this.showPlayerInfo} alt="info" />
                 </div>
             </div>
         );
