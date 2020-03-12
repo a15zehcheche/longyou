@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "65d43f827a9f2e824c87350ec5a7d77f",
+    "revision": "ceb45eccfec426648170614bb790d727",
     "url": "/longyou/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/longyou/static/css/2.5e18519e.chunk.css"
   },
   {
-    "revision": "aca6d20777c8b2156131",
-    "url": "/longyou/static/css/main.d9804c4c.chunk.css"
+    "revision": "5d5f3dfda8f2f82b4a11",
+    "url": "/longyou/static/css/main.c928cd36.chunk.css"
   },
   {
     "revision": "bbcdd9b27d4cd2db44e8",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/longyou/static/js/2.27d31dc0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "aca6d20777c8b2156131",
-    "url": "/longyou/static/js/main.3b806de7.chunk.js"
+    "revision": "5d5f3dfda8f2f82b4a11",
+    "url": "/longyou/static/js/main.28315ad4.chunk.js"
   },
   {
     "revision": "0be841c337c172a52191",
