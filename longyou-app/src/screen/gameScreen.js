@@ -20,7 +20,8 @@ class GameScreen extends Component {
             //point: this.props.players.length - 1,
             point: 0,
             //players: date.players,
-            dau: 0,
+            dau1: 0,
+            dau2: 0,
             pases: 0,
             caminarInterval: null,
             scale: 1,
@@ -34,8 +35,9 @@ class GameScreen extends Component {
     next = () => {
         if (!this.state.go) {
             this.setState({ go: !this.state.go })
-            //this.state.dau = this.randomNum();
-            this.state.pases = this.state.dau;
+            this.state.dau1 = this.randomNum();
+            this.state.dau2 = this.randomNum();
+            this.state.pases = this.state.dau1 + this.state.dau2;
             this.state.caminarInterval = setInterval(this.caminar, 500);
 
             //console.log(this.state.players[this.state.point].mapPosition)
@@ -287,7 +289,7 @@ class GameScreen extends Component {
                         {players}
                     </div>
                     <div>
-                        <div>pases {this.state.dau}</div>
+                        <div>骰子1: {this.state.dau1}　骰子2: {this.state.dau2}</div>
                         <div>next player: {this.state.players[this.state.point].id}</div>
                         <div>
 
@@ -304,8 +306,8 @@ class GameScreen extends Component {
                         <input placeholder="pasos" onChange={this.updatePasos} value={this.state.dau}></input>
                         <Container>
                             <Row>
-                                <Col><Button onClick={this.next}>骰子</Button></Col>
-                                <Col><Button onClick={this.end} variant="danger">结束</Button></Col>
+                                <Col><Button onClick={this.next} disabled={this.state.go}>骰子</Button></Col>
+                                <Col><Button onClick={this.end} variant="danger" disabled={!this.state.go}>结束</Button></Col>
                             </Row>
                         </Container>
 
