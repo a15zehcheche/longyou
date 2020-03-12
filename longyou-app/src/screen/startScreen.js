@@ -5,6 +5,7 @@ import '../App.css';
 import Player from '../component/initPlayer'
 import date from '../date'
 import GameScreen from './gameScreen'
+import { Button } from 'react-bootstrap';
 
 
 class StartScreen extends Component {
@@ -56,6 +57,7 @@ class StartScreen extends Component {
                 "character": null,
                 "mapPosition": null,
                 "deeds":[],
+                "active":false
             };
             this.state.players.push(player)
             this.setState({ players: this.state.players });
@@ -112,7 +114,7 @@ class StartScreen extends Component {
                         </div>
                     </div>
 
-                    <button onClick={this.handleStartClick}>start</button>
+                    <Button onClick={this.handleStartClick}>开始游戏</Button>
                 </div>
             )
 

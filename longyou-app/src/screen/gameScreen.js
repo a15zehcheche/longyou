@@ -9,14 +9,16 @@ import Swal from 'sweetalert2'
 import 'sweetalert2/src/sweetalert2.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PlayerInfo from '../component/playerInfo';
-import { queryAllByAltText } from '@testing-library/react';
+import { Button, Row, Col, Container } from 'react-bootstrap';
+
 
 class GameScreen extends Component {
     constructor(props) {
         super(props)
         this.state = {
             players: this.props.players,
-            point: this.props.players.length - 1,
+            //point: this.props.players.length - 1,
+            point: 0,
             //players: date.players,
             dau: 0,
             pases: 0,
@@ -25,25 +27,38 @@ class GameScreen extends Component {
             value: 10,
             show: false,
             playerInfo: null,
+            go: false
         }
     }
 
     next = () => {
-        if (this.state.pases === 0) {
+        if (!this.state.go) {
+            this.setState({ go: !this.state.go })
             //this.state.dau = this.randomNum();
             this.state.pases = this.state.dau;
             this.state.caminarInterval = setInterval(this.caminar, 500);
 
             //console.log(this.state.players[this.state.point].mapPosition)
             //console.log(this.state.point)
+            this.setState({ dau: this.state.dau });
+        }
+
+
+    }
+    end = () => {
+        if (this.state.go) {
+            this.setState({ go: !this.state.go })
+            let previoPoint = this.state.point;
             if (this.state.point < this.state.players.length - 1) {
                 this.state.point += 1;
             } else {
                 this.state.point = 0;
             }
-            this.setState({ dau: this.state.dau });
-        }
+            this.state.players[previoPoint].active = false;
+            this.state.players[this.state.point].active = true;
+            this.setState({ players: this.state.players })
 
+        }
 
     }
     randomNum = () => {
@@ -254,10 +269,12 @@ class GameScreen extends Component {
 
     componentWillMount = () => {
         this.state.playerInfo = this.state.players[0];
+        this.state.players[0].active = true;
     }
     updatePasos = (event) => {
         this.setState({ dau: event.target.value })
     }
+
     render() {
         const players = this.state.players.map((playerDate, index) => <Player key={index} date={playerDate} showPlayerInfo={this.showPlayerInfo} />);
 
@@ -265,12 +282,7 @@ class GameScreen extends Component {
             <div style={{ display: "flex" }}>
 
                 <Map scale={this.state.scale} players={this.state.players} />
-                <div style={{
-                    display: "flex",
-                    width: "20%",
-                    flexDirection: "column",
-                    height: "100vh"
-                }}>
+                <div className="sidebar">
                     <div className="playerContainer">
                         {players}
                     </div>
@@ -290,7 +302,13 @@ class GameScreen extends Component {
 
                         <PlayerInfo show={this.state.show} onHide={this.closeModal} closeModal={this.closeModal} playerInfo={this.state.playerInfo} />
                         <input placeholder="pasos" onChange={this.updatePasos} value={this.state.dau}></input>
-                        <button onClick={this.next}>next</button>
+                        <Container>
+                            <Row>
+                                <Col><Button onClick={this.next}>骰子</Button></Col>
+                                <Col><Button onClick={this.end} variant="danger">结束</Button></Col>
+                            </Row>
+                        </Container>
+
                     </div>
                 </div>
             </div>

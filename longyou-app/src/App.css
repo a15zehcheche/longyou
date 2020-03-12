@@ -47,15 +47,16 @@ button{
 
 .mapcontainer {
     position: relative;
-    width: 80%;
+    /*width: 80%;*/
     height: 100vh;
     background-color: blanchedalmond;
     overflow: scroll;
     overflow-x: scroll;
     overflow-y: scroll;
-    border: 5px blue solid;
+    border: 5px #6c5449 solid;
     box-sizing: border-box;
     display: flex;
+    flex:1;
     /*justify-content: center;*/
 }
 
@@ -111,6 +112,13 @@ button{
 
 }
 
+.sidebar{
+    display: flex;
+    width: 350px;
+    flex-direction: column;
+    height: 100vh;
+}
+
 /*--------------- PLAYER CSS ---------------*/
 
 .playerContainer {
@@ -133,8 +141,12 @@ button{
     background-color: aliceblue;
     border-radius: 10px;
     margin: 20px;
+    display: flex;
 }
-
+.playerActive{
+    border: 2px solid #6ea224;
+    box-shadow: #6ea224 0px 0px 5px 4px;
+}
 .player ul {
     list-style: none;
 }
@@ -229,7 +241,6 @@ button{
 .initGame button {
     font-size: 30px;
     width: 200px;
-    height: 50px;
     margin: 10px;
 }
 

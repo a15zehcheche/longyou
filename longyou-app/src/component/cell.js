@@ -56,7 +56,7 @@ class Cell extends Component {
         let home = null;
         let space;
         let test = <div style={{ color: "white" }}>{this.props.cellDate.id}</div>
-        test = null
+        test = null 
         let homeStyle = {
             width: "100%",
             height: "23%",
