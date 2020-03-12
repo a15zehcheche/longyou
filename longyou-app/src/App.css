@@ -71,10 +71,7 @@ button{
 }
 
 @media only screen and (max-width: 600px) {
-    .map {
-        position: relative;
-        background-color: green;
-    }
+
 }
 
 #bottomRight {
@@ -190,12 +187,12 @@ button{
 .deed img{
     height: 100%;
 }
-
+/*
 @media only screen and (max-width: 600px) {
     .playerContainer {
         display: -webkit-inline-box;
         flex-direction: row;
-        /*background-color:rgba(59, 238, 214, 0.3);*/
+        background-color:rgba(59, 238, 214, 0.3);
         position: absolute;
         top: 0;
         left: 0;
@@ -203,7 +200,6 @@ button{
         width: 100%;
         overflow-x: scroll;
         width: 25%;
-        /*opacity: 0.5;*/
     }
     .player {
         display: flex;
@@ -225,7 +221,7 @@ button{
         padding: 5px;
         margin: 0;
     }
-}
+}*/
 
 
 /*--------------- init CSS ---------------*/

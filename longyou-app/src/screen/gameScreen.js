@@ -297,7 +297,7 @@ class GameScreen extends Component {
                         <div style={{ width: "150px" }}>
                             <InputRange
                                 maxValue={10}
-                                minValue={4}
+                                minValue={3}
                                 value={this.state.value}
                                 onChange={scale => { this.setState({ value: scale }); scale /= 10; this.setState({ scale }); }} />
                         </div>

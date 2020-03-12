@@ -98,10 +98,6 @@ class Map extends Component {
               <div className="mapcontainer" >
                 <div className="map" style={mapStyle}>
                 <img style={{ marginBottom: "-3px", width: "100%" }} src={map} alt="map" />
-                  <div id="bottomLeft">bottomLeft</div>
-                  <div id="bottomRight">bottomRight</div>
-                  <div id="topLeft">topLeft{this.props.scale}</div>
-                  <div id="topRight">topRight</div>
                   <div>
                     {Cells}
                   </div>

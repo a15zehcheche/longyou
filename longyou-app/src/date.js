@@ -609,6 +609,19 @@ const Dates = {
             "mapPosition": 1,
         },
     ],
+    "luckCards":[
+        {}
+    ],
+    "luckCardsWait":[
+        
+    ],
+
+    "TreasuryCards":[
+
+    ],
+    "TreasuryCardsWait":[
+
+    ],
     "map": {
         "cells": [
             //top
