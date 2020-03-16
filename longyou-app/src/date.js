@@ -609,18 +609,247 @@ const Dates = {
             "mapPosition": 1,
         },
     ],
-    "luckCards":[
-        {}
-    ],
-    "luckCardsWait":[
-        
-    ],
+    "luckCardsDefauld": "/images/luckCards/0.png",
+    "luckCards": [
+        {
+            "img":"/images/luckCards/0.png"
+        },
+        {
+            "img": "/images/luckCards/1.png",
+            "value": -300
+        },
+        {
+            "img": "/images/luckCards/2.png",
+            "value": -300
+        },
+        {
+            "img": "/images/luckCards/3.png",
+            "value": -50
+        },
+        {
+            "img": "/images/luckCards/4.png",
+            "value": -300
+        },
+        {
+            "img": "/images/luckCards/5.png",
+            "value": -100
+        },
+        {
+            "img": "/images/luckCards/6.png",
+            "value": 0,
+            "action": "回到出发起点"
+        },
+        {
+            "img": "/images/luckCards/7.png",
+            "value": -100
+        },
+        {
+            "img": "/images/luckCards/8.png",
+            "value": -20
+        },
+        {
+            "img": "/images/luckCards/9.png",
+            "value": -300
+        },
+        {
+            "img": "/images/luckCards/10.png",
+            "value": 0,
+            "action": "被骗走一套房子"
+        },
+        {
+            "img": "/images/luckCards/11.png",
+            "value": 0,
+            "action": "筛出两个同样的数字才能再次移动"
+        },
+        {
+            "img": "/images/luckCards/12.png",
+            "value": 0,
+            "action": "倒退３格"
+        },
+        {
+            "img": "/images/luckCards/13.png",
+            "value": 0,
+            "action": "下一次轮掷骰子跳过"
+        },
+        {
+            "img": "/images/luckCards/14.png",
+            "value": -50
+        },
+        {
+            "img": "/images/luckCards/15.png",
+            "value": -300
+        },
+        {
+            "img": "/images/luckCards/16.png",
+            "value": 50
+        },
+        {
+            "img": "/images/luckCards/17.png",
+            "value": "收到一套房子"
+        },
+        {
+            "img": "/images/luckCards/18.png",
+            "value": 200
+        },
+        {
+            "img": "/images/luckCards/19.png",
+            "value": 50
+        },
+        {
+            "img": "/images/luckCards/20.png",
+            "value": 0,
+            "action":"免去下次任何惩罚"
+        },
+        {
+            "img": "/images/luckCards/21.png",
+            "value": 0,
+            "action":"前进３格"
+            
+        },
+        {
+            "img": "/images/luckCards/22.png",
+            "value": 20,
+        },
+        {
+            "img": "/images/luckCards/23.png",
+            "value": 50
+        },
+        {
+            "img": "/images/luckCards/24.png",
+            "value": 100
+        },
+        {
+            "img": "/images/luckCards/25.png",
+            "value": 0,
+            "action":"在掷一次骰子"
+        },
+        {
+            "img": "/images/luckCards/26.png",
+            "value": 50
+        },
+        {
+            "img": "/images/luckCards/27.png",
+            "value": 500
+        },
 
-    "TreasuryCards":[
-
     ],
-    "TreasuryCardsWait":[
-
+    "treasuryCardsDefauld": "/images/treasuryCards/0.png",
+    "treasuryCards": [
+        {
+            "img":"/images/treasuryCards/0.png",
+        },
+        {
+            "img": "/images/treasuryCards/1.png",
+            "value": -300
+        },
+        {
+            "img": "/images/treasuryCards/2.png",
+            "value": -300
+        },
+        {
+            "img": "/images/treasuryCards/3.png",
+            "value": -200
+        },
+        {
+            "img": "/images/treasuryCards/4.png",
+            "value": 0,
+            "action":"三个回合，路过你的产业不需要向你支付过路费"
+        },
+        {
+            "img": "/images/treasuryCards/5.png",
+            "value": 0,
+            "action":"每套房子罚２５两，每家客栈罚１００两"
+        },
+        {
+            "img": "/images/treasuryCards/6.png",
+            "value": 0,
+            "action":"马上入狱"
+        },
+        {
+            "img": "/images/treasuryCards/7.png",
+            "value": 0,
+            "action":"向每位玩家支付５０两"
+        },
+        {
+            "img": "/images/treasuryCards/8.png",
+            "value": -100,
+        },
+        {
+            "img": "/images/treasuryCards/9.png",
+            "value": -50
+        },
+        {
+            "img": "/images/treasuryCards/10.png",
+            "value": 0
+        },
+        {
+            "img": "/images/treasuryCards/11.png",
+            "value": 0
+        },
+        {
+            "img": "/images/treasuryCards/12.png",
+            "value": 0
+        },
+        {
+            "img": "/images/treasuryCards/13.png",
+            "value": 0
+        },
+        {
+            "img": "/images/treasuryCards/14.png",
+            "value": 0
+        },
+        {
+            "img": "/images/treasuryCards/15.png",
+            "value": 0
+        },
+        {
+            "img": "/images/treasuryCards/16.png",
+            "value": 0
+        },
+        {
+            "img": "/images/treasuryCards/17.png",
+            "value": 0
+        },
+        {
+            "img": "/images/treasuryCards/18.png",
+            "value": 0
+        },
+        {
+            "img": "/images/treasuryCards/19.png",
+            "value": 0
+        },
+        {
+            "img": "/images/treasuryCards/20.png",
+            "value": 0
+        },
+        {
+            "img": "/images/treasuryCards/21.png",
+            "value": 0
+        },
+        {
+            "img": "/images/treasuryCards/22.png",
+            "value": 0
+        },
+        {
+            "img": "/images/treasuryCards/23.png",
+            "value": 0
+        },
+        {
+            "img": "/images/treasuryCards/24.png",
+            "value": 0
+        },
+        {
+            "img": "/images/treasuryCards/25.png",
+            "value": 0
+        },
+        {
+            "img": "/images/treasuryCards/26.png",
+            "value": 0
+        },
+        {
+            "img": "/images/treasuryCards/27.png",
+            "value": 0
+        },
     ],
     "map": {
         "cells": [
@@ -663,10 +892,7 @@ const Dates = {
                 "width": 182,
                 "top": 45,
                 "left": 537,
-                "action": {
-                    "missage": "待开发",
-                    "value": 0,
-                }
+                "action": "treasuryCards"
             },
             {
                 "id": 24,
@@ -765,10 +991,7 @@ const Dates = {
                 "width": 182,
                 "top": 45,
                 "left": 1647,
-                "action": {
-                    "missage": "待开发",
-                    "value": 0,
-                }
+                "action": "luckCards"
             },
             {
                 "id": 30,
@@ -849,10 +1072,7 @@ const Dates = {
                 "width": 304,
                 "top": 721,
                 "left": 2018,
-                "action": {
-                    "missage": "待开发",
-                    "value": 0,
-                }
+                "action": "treasuryCards"                
             },
             {
                 "id": 35,
@@ -922,10 +1142,8 @@ const Dates = {
                 "width": 304,
                 "top": 1646,
                 "left": 2018,
-                "action": {
-                    "missage": "待开发",
-                    "value": 0,
-                }
+                "action": "luckCards"
+
             },
             {
                 "id": 40,
@@ -1002,10 +1220,7 @@ const Dates = {
                 "width": 182,
                 "top": 2017,
                 "left": 722,
-                "action": {
-                    "missage": "待开发",
-                    "value": 0,
-                }
+                "action": "luckCards"
             },
             {
                 "id": 7,
@@ -1076,10 +1291,7 @@ const Dates = {
                 "width": 182,
                 "top": 2017,
                 "left": 1647,
-                "action": {
-                    "missage": "待开发",
-                    "value": 0,
-                }
+                "action": "treasuryCards"
             },
             {
                 "id": 2,
@@ -1157,10 +1369,7 @@ const Dates = {
                 "width": 304,
                 "top": 721,
                 "left": 45,
-                "action": {
-                    "missage": "待开发",
-                    "value": 0,
-                }
+                "action": "luckCards"
             },
             {
 
@@ -1242,10 +1451,7 @@ const Dates = {
                 "width": 304,
                 "top": 1646,
                 "left": 45,
-                "action": {
-                    "missage": "待开发",
-                    "value": 0,
-                }
+                "action": "treasuryCards"
             },
             {
 
@@ -1271,12 +1477,14 @@ const Dates = {
         ],
         "cards": [
             {
+                "name":"treasuryCards",
                 "height": 312,
                 "width": 455,
                 "top": 550,
                 "left": 474,
             },
             {
+                "name":"luckCards",
                 "height": 312,
                 "width": 455,
                 "top": 1510,

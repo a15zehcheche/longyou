@@ -16,7 +16,9 @@ class Player extends Component {
             mystyle.boxShadow = "0px 0px 5px 4px" + this.props.date.character.color;
         }
         return (
+
             <div className="player" style={mystyle}>
+                <a id={"playerInfo" + this.props.date.id} href={"#playerInfo" + this.props.date.id}></a>
                 <div className="character_img_container">
                     <a href={"#" + this.props.date.id}>
                         <img className="character_img" src={process.env.PUBLIC_URL + this.props.date.character.img} alt="img" />
@@ -33,6 +35,7 @@ class Player extends Component {
                     <img style={{ cursor: "pointer" }} src={process.env.PUBLIC_URL + "/images/icons8-info-24.png"} onClick={this.showPlayerInfo} alt="info" />
                 </div>
             </div>
+
         );
     }
 }

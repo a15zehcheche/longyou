@@ -13,12 +13,12 @@ class Card extends Component {
             top: this.props.cardDate.top * this.props.scale + "px",
             left: this.props.cardDate.left * this.props.scale + "px",
             position: "absolute",
-            backgroundColor: "lightblue",
-            opacity: 0.5,
-            border: "3px black solid",
+           // backgroundColor: "lightblue",
+           // opacity: 0.5,
+            border: "2px black solid",
             boxSizing: "border-box",
             transform: "rotate(-45deg)",
-            borderRadius: 40 * this.props.scale+"px"
+            //borderRadius: 40 * this.props.scale+"px"
         }
         const mobileStyle = {
             height: this.props.cardDate.height / 2 * this.props.scale + "px",
@@ -44,6 +44,7 @@ class Card extends Component {
                     ) : (
                             //The document is at least 600px wide.
                             <div className="card" style={pcStyle}>
+                                <img  style={{height:"100%"}} src={process.env.PUBLIC_URL + this.props.cardDate.card.img} alt="card" />
                             </div>
                         )
                 }

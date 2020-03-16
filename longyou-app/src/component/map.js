@@ -61,6 +61,9 @@ class Map extends Component {
 
   render() {
     const Cells = date.map.cells.map((cellDate) => <Cell key={"cell" + cellDate.id} players={this.props.players} cellDate={cellDate} scale={this.props.scale} />);
+
+    date.map.cards[0].card=this.props.treasuryCard;
+    date.map.cards[1].card=this.props.luckCard;
     const Cards = date.map.cards.map((cardDate, index) => <Card key={"card" + index} cardDate={cardDate} scale={this.props.scale} />);
     let mapStyle = {
       width: 2368 * this.props.scale + "px",

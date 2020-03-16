@@ -9,7 +9,9 @@ import Swal from 'sweetalert2'
 import 'sweetalert2/src/sweetalert2.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PlayerInfo from '../component/playerInfo';
+import Dice from '../component/dice'
 import { Button, Row, Col, Container } from 'react-bootstrap';
+import $ from "jquery"
 
 
 class GameScreen extends Component {
@@ -20,23 +22,25 @@ class GameScreen extends Component {
             //point: this.props.players.length - 1,
             point: 0,
             //players: date.players,
-            dau1: 0,
-            dau2: 0,
+            dau1: 1,
+            dau2: 1,
             pases: 0,
             caminarInterval: null,
             scale: 1,
             value: 10,
             show: false,
             playerInfo: null,
-            go: false
+            go: false,
+            treasuryCard: date.treasuryCards[0],
+            luckCard: date.luckCards[0],
         }
     }
 
     next = () => {
         if (!this.state.go) {
             this.setState({ go: !this.state.go })
-            this.state.dau1 = this.randomNum();
-            this.state.dau2 = this.randomNum();
+            this.state.dau1 = this.randomNum(6);
+            this.state.dau2 = this.randomNum(6);
             this.state.pases = this.state.dau1 + this.state.dau2;
             this.state.caminarInterval = setInterval(this.caminar, 500);
 
@@ -48,7 +52,7 @@ class GameScreen extends Component {
 
     }
     end = () => {
-        if (this.state.go) {
+        if (this.state.go && this.state.pases === 0) {
             this.setState({ go: !this.state.go })
             let previoPoint = this.state.point;
             if (this.state.point < this.state.players.length - 1) {
@@ -59,12 +63,18 @@ class GameScreen extends Component {
             this.state.players[previoPoint].active = false;
             this.state.players[this.state.point].active = true;
             this.setState({ players: this.state.players })
+            // let playerLink = "#playerInfo" + this.state.players[this.state.point].id;
+            //$("#playerInfoPlayer1").click()
+            //console.log(playerLink)
+            this.setState({ luckCard: date.luckCards[0] })
+            this.setState({ treasuryCard: date.treasuryCards[0] })
+
 
         }
 
     }
-    randomNum = () => {
-        return Math.floor(Math.random() * 6) + 1
+    randomNum = (number) => {
+        return Math.floor(Math.random() * number) + 1
 
     }
     caminar = () => {
@@ -83,6 +93,7 @@ class GameScreen extends Component {
             clearInterval(this.state.caminarInterval);
             this.checkAction();
             this.setState({ pases: 0 })
+            this.state.pases = 0;
         }
 
         this.setState({ players: this.state.players })
@@ -111,8 +122,22 @@ class GameScreen extends Component {
                         this.buyHouse(this.state.players[this.state.point], cellAction)
                     }
                 }
+            } else if (cellAction.action == "treasuryCards") {
+                this.setState({ treasuryCard: date.treasuryCards[this.randomNum(date.treasuryCards.length)] })
+                Swal.fire({
+                    imageUrl: process.env.PUBLIC_URL + this.state.treasuryCard.img
+                })
+                this.state.players[this.state.point].money += this.state.treasuryCard.value;
+            } else if (cellAction.action == "luckCards") {
+                this.setState({ luckCard: date.luckCards[this.randomNum(date.luckCards.length)] })
+                Swal.fire({
+                    imageUrl: process.env.PUBLIC_URL + this.state.luckCard.img
+                })
+                this.state.players[this.state.point].money += this.state.luckCard.value;
 
             }
+            //this.setState({players:this.state.players})
+
 
         }
 
@@ -274,44 +299,56 @@ class GameScreen extends Component {
         this.state.players[0].active = true;
     }
     updatePasos = (event) => {
-        this.setState({ dau: event.target.value })
+        this.setState({ dau1: event.target.value })
     }
 
     render() {
         const players = this.state.players.map((playerDate, index) => <Player key={index} date={playerDate} showPlayerInfo={this.showPlayerInfo} />);
 
+        let style = {
+            justifyContent: "center",
+            alignItems: "center",
+            display: "flex",
+        }
         return (
             <div style={{ display: "flex" }}>
 
-                <Map scale={this.state.scale} players={this.state.players} />
+                <Map scale={this.state.scale} players={this.state.players} luckCard={this.state.luckCard} treasuryCard={this.state.treasuryCard} />
                 <div className="sidebar">
+
+                    <Container>
+                        <Row>
+                            <Col style={style}><InputRange
+                                maxValue={10}
+                                minValue={3}
+                                value={this.state.value}
+                                onChange={scale => { this.setState({ value: scale }); scale /= 10; this.setState({ scale }); }} /></Col>
+                        </Row>
+                    </Container>
                     <div className="playerContainer">
                         {players}
                     </div>
                     <div>
-                        <div>骰子1: {this.state.dau1}　骰子2: {this.state.dau2}</div>
-                        <div>next player: {this.state.players[this.state.point].id}</div>
-                        <div>
 
-                        </div>
-                        <div style={{ width: "150px" }}>
-                            <InputRange
-                                maxValue={10}
-                                minValue={3}
-                                value={this.state.value}
-                                onChange={scale => { this.setState({ value: scale }); scale /= 10; this.setState({ scale }); }} />
-                        </div>
-
-                        <PlayerInfo show={this.state.show} onHide={this.closeModal} closeModal={this.closeModal} playerInfo={this.state.playerInfo} />
-                        <input placeholder="pasos" onChange={this.updatePasos} value={this.state.dau}></input>
                         <Container>
+
                             <Row>
-                                <Col><Button onClick={this.next} disabled={this.state.go}>骰子</Button></Col>
-                                <Col><Button onClick={this.end} variant="danger" disabled={!this.state.go}>结束</Button></Col>
+                                <Col style={style}><Dice number={this.state.dau1} /></Col>
+                                <Col style={style}><Dice number={this.state.dau2} /></Col>
+
+                            </Row>
+
+                            <Row>
+
+                                <Col style={style}><Button onClick={this.next} disabled={this.state.go}>骰子</Button></Col>
+                                <Col style={style}><Button onClick={this.end} variant="danger" disabled={!this.state.go}>结束</Button></Col>
                             </Row>
                         </Container>
 
+
                     </div>
+                    <PlayerInfo show={this.state.show} onHide={this.closeModal} closeModal={this.closeModal} playerInfo={this.state.playerInfo} />
+
                 </div>
             </div>
         );
@@ -321,6 +358,10 @@ class GameScreen extends Component {
 export default GameScreen;
 
 /*
+                        <div>next player: {this.state.players[this.state.point].id}</div>
+
+                       <input placeholder="pasos" onChange={this.updatePasos} value={this.state.dau}></input>
+
   <Modal show={this.state.show} size="lg"
                             aria-labelledby="contained-modal-title-vcenter"
                             centered
